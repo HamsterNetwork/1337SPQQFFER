@@ -1,0 +1,136 @@
+About LiquidBounce
+The LiquidBounce hacked client, developed by CCBlueX, allows you to use lots of different cheats to become the 
+best player on any server you want! But it also features lots of mods especially designed for griefing.
+
+LEARN MORE!
+The LiquidBounce Hacked Client has been around since Minecraft 1.8.x.
+
+LiquidBounce is a Hacked Client which has all the cheats you know and love. Of course you can find all the standard
+hacks like KillAura, Criticals, Nuker and Tracers but also some you might have never seen in any other client before
+like BedGodMode, Infinite Vanilla Teleport and UUID Spoofing.
+
+LiquidBounce in an easy-to-use hacked client but if you are ever stuck, feel free to contact us via Discord or
+e-Mail.
+
+Features
+
+Over 80+ Cheat
+The LiquidBounce Hacked Client comes packed with over 80+ cheats that let you rule the playing field. 
+All cheats are instantly deployable at a moments notice… you rule the game!
+
+MultiOS Support
+You pick the gear and we’ll make sure we’re running on it. This amazing Hacked Client fully embraces MulitOS Support 
+by proving full-scale usability across Windows, Mac and Linux OS’.
+
+OptiFine TuneUp
+We want you to have the most enjoyable experience so LiquidBounce comes packed with OptiFine right out of the box. 
+Enjoy HD texture packs, greater rendering distances and higher FPS!
+
+MCLeaks Integration
+Got banned on your favorite server? Well, with MCLeaks Integration you have access toalmost unlimited free alts.
+Just go to MCLeaks.net, get yourself a Token, paste it into the AltManager and you should be good to go. 
+
+Unique Cheats
+Of course you can use LiquidBounce for PVP but there are also lots of cool cheats to discover if you are interested
+in griefing. Things like Infinite Vanilla Teleport and UUID Spoofing will help you to destroy many servers.
+
+A Whole Lot More!
+We can’t possibly list all the new features in LiquidBounce – we want you to discover some on your own! Download LiquidBounce, have
+a play and enjoy the smooth and relaxing gameplay…
+
+Cheats
+- AimAssist
+- AimBot
+- AntiBot
+- AntiCactus
+- AutoArmor
+- AutoBow
+- AutoBreak
+- AutoLeave
+- AutoPot
+- AutoRespawn
+- AutoSoup
+- AutoSword
+- AutoTool
+- AutoWalk
+- BedGodMode
+- Blink
+- Bowaimbot
+- ChestAura
+- ChestStealer
+- CivBreak
+- Criticals
+- ESP
+- Eagle
+- ElytraFly
+- FastBreak
+- FastClimb
+- Fastplace
+- Fly
+- FreeCam
+- Fucker
+- Fullbright
+- Ghost
+- GhostHand
+- Glide
+- GlowESP
+- HighJump
+- HitBox
+- IceSpeed
+- InvMove
+- ItemESP
+- Jetpack
+- KillAura
+- LiquidWalk
+- MidClick
+- NameProtect
+- NameTags
+- NoClip
+- NoFall
+- NoHurtCam
+- NoPush
+- NoRotateSet
+- NoSlow
+- NoWeb
+- Nuker
+- Paralyze
+- PingSpoof
+- Plugins
+- Projectiles
+- Regen
+- SafeWalk
+- Scaffold
+- SkinDerp
+- SkipPhase
+- Sneak
+- Spammer
+- Speed
+- Sprint
+- Step
+- StickyPlayer
+- StorageESP
+- Strafe
+- Teams
+- Teleport
+- Timer
+- Tower
+- Tracers
+- Trigger
+- VehicleFly
+- Velocity
+- WallClimb
+- WireframeESP
+- WizardBot
+- XRay
+
+Controls
+RSHIFT: ClickGUI
+ArrowKeys: TabGUI
+
+Commands
+.teleport
+.damage
+.taco
+.vclip
+.friend
+.toggle
