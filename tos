@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidBounce &bull; TOS</title>
+<meta name="author" content="CCBlueX">
+<meta name="description" content="Read about LiquidBounce's Terms of Service.">
+<meta name="page-topic" content="LiquidBounce">
+<meta http-equiv="content-language" content="en">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="liquidbounce, liquid, bounce, hack, hacked client, cheat, minecraft, mc, free, download, mc, mojang, hacker, cheater">
+<meta property="og:image" content="/img/logos/favicon.png">
+<script src="cdn-cgi/apps/head/f0DW88jjTX2flLOy4SwQchuhDFw.js"></script><link rel="icon" type="image/png" href="img/logos/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/docs.css">
+<script src="js/modernizr.js"></script>
+</head>
+<body class="">
+<div class="page js-page ">
+<div class="header header-over large">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<a href="https://liquidbounce.net/" class="logo-image logo-animated">
+<img src="img/logos/logo-light.svg" alt="logo">
+</a>
+</div>
+<div class="col-md-9 col-sm-6 col-xs-6">
+<nav class="right helper">
+<ul class="menu sf-menu js-menu menu-light">
+<li>
+<a href="https://liquidbounce.net/">Home</a>
+</li>
+<li>
+<a href="download">Download</a>
+</li>
+<li>
+<a href="donate">Donate</a>
+</li>
+<li>
+<a href="changelogs">Changelogs</a>
+</li>
+<li>
+<a href="https://github.com/CCBlueX/LiquidBounce">Source Code</a>
+</li>
+<li>
+<a href="tos#">Documentation</a>
+<ul>
+<li>
+<a href="docs/Tutorials">Tutorials</a>
+<ul>
+<li>
+<a href="docs/Tutorials/Installation">Installation</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/CustomHUD">CustomHUD</a>
+<ul>
+<li>
+<a href="docs/CustomHUD/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/CustomHUD/Elements">Elements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/AutoSettings">AutoSettings</a>
+<ul>
+<li>
+<a href="docs/AutoSettings/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/AutoSettings/Local&#32;Settings">Local Settings</a>
+</li>
+ </ul>
+</li>
+<li>
+<a href="docs/ScriptAPI">ScriptAPI</a>
+<ul>
+<li>
+<a href="docs/ScriptAPI/Getting&#32;Started">Getting Started</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Setting&#32;up&#32;Babel">Setting up Babel</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Managers">Managers</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Modules">Creating Modules</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Commands">Creating Commands</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Inventory&#32;Tabs">Creating Inventory Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="tos#">Community</a>
+<ul>
+<li>
+<a target="_blank" href="https://youtube.com/ccbluex">YouTube</a>
+</li>
+<li>
+<a target="_blank" href="https://twitter.com/ccbluex">Twitter</a>
+</li>
+<li>
+<a target="_blank" href="https://d.tube/#!/c/ccbluex">DTube</a>
+</li>
+<li>
+<a target="_blank" href="https://discord.gg/gdQ82He">Discord</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://forum.ccbluex.net">Forum</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="header-back header-back-simple header-back-small">
+<div class="header-back-container">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="page-info page-info-simple">
+<h1 class="page-title">TOS</h1>
+<h2 class="page-description">LiquidBounce Terms of Service</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="container">
+<div class="row">
+<div class="col-md-12" style="text-align: justify">
+<div class="main-content">
+<h1>LiquidBounce TOS</h1>
+<h3>1. Terms</h3>
+<p>By accessing this web site, you are agreeing to be bound by these web site Terms and
+Conditions of Use, all applicable laws and regulations, and agree that you are
+responsible for compliance with any applicable local laws. If you do not agree
+with any of these terms, you are prohibited from using or accessing this site.
+The materials contained in this web site are protected by applicable copyright
+and trade mark law.</p>
+<h3>2. Disclaimer</h3>
+<p>The materials on CCBlueX's web site are provided "as is". CCBlueX makes no warranties,
+expressed or implied, and hereby disclaims and negates all other warranties, including
+without limitation, implied warranties or conditions of merchantability, fitness for a
+particular purpose, or non-infringement of intellectual property or other violation of
+rights. Further, CCBlueX does not warrant or make any representations concerning the
+accuracy, likely results, or reliability of the use of the materials on its Internet
+web site or otherwise relating to such materials or on any sites linked to this site.</p>
+<h3>3. Limitations</h3>
+<p>In no event shall CCBlueX or its suppliers be liable for any damages (including, without
+limitation, damages for loss of data or profit, or due to business interruption,) arising
+out of the use or inability to use the materials on CCBlueX's Internet site, even if
+CCBlueX or a CCBlueX authorized representative has been notified orally or in writing
+of the possibility of such damage. Because some jurisdictions do not allow limitations
+on implied warranties, or limitations of liability for consequential or incidental
+damages, these limitations may not apply to you.</p>
+<h3>4. Revisions and Errata</h3>
+<p>The materials appearing on CCBlueX's web site could include technical, typographical, or
+photographic errors. CCBlueX does not warrant that any of the materials on its
+web site are accurate, complete, or current. CCBlueX may make changes to the materials
+contained on its web site at any time without notice. CCBlueX does not, however, make
+any commitment to update the materials.</p>
+<h3>5. Links</h3>
+<p>CCBlueX has not reviewed all of the sites linked to its Internet web site and is not
+responsible for the contents of any such linked site. The inclusion of any link does
+not imply endorsement by CCBlueX of the site. Use of any such linked web site is at
+the user's own risk.</p>
+<h3>6. Site Terms of Use Modifications</h3>
+<p>CCBlueX may revise these terms of use for its web site at any time without notice. By
+using this web site you are agreeing to be bound by the then current version of
+these Terms and Conditions of Use.</p>
+<p><small>LiquidBounce is an unofficial modification for the game "Minecraft" by Mojang AB/Microsoft.
+CCBlueX is NOT associated with Mojang AB, Microsoft and Minecraft.net in any way possible.</small></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="js-footer-is-fixed">
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-12"> 
+<div class="footer-logo-wrapper">
+<a href="index.html" class="logo-image ">
+<img src="img/logos/ccbluex-logo.png" alt="logo">
+</a>
+<p class="slogan">Made
+<br>By
+<br>CCBlueX
+</p>
+</div>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-12">
+<div class="footer-wrapper">
+<span class="scroll-top js-scroll-top">
+<i class="fa fa-angle-up"></i>
+</span>
+<ul class="footer-menu helper right">
+<li>
+<a href="privacy">Privacy Policy</a>
+</li>
+<li>
+<a href="tos">Terms of Service</a>
+</li>
+<li>
+<a href="mailto:support@liquidbounce.net">support@liquidbounce.net</a>
+</li>
+</ul>
+<p class="copyright helper right">&copy;
+<a href="https://ccbluex.net">CCBlueX</a> 2015-2020
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="js/all.js"></script>
+</body>
+</html>

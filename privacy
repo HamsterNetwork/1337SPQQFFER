@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidBounce &bull; Privacy Policy</title>
+<meta name="author" content="CCBlueX">
+<meta name="description" content="Read about LiquidBounce's Privacy Policy.">
+<meta name="page-topic" content="LiquidBounce">
+<meta http-equiv="content-language" content="en">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="liquidbounce, liquid, bounce, hack, hacked client, cheat, minecraft, mc, free, download, mc, mojang, hacker, cheater">
+<meta property="og:image" content="/img/logos/favicon.png">
+<script src="cdn-cgi/apps/head/f0DW88jjTX2flLOy4SwQchuhDFw.js"></script><link rel="icon" type="image/png" href="img/logos/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/docs.css">
+<script src="js/modernizr.js"></script>
+</head>
+<body class="">
+<div class="page js-page ">
+<div class="header header-over large">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<a href="https://liquidbounce.net/" class="logo-image logo-animated">
+<img src="img/logos/logo-light.svg" alt="logo">
+</a>
+</div>
+<div class="col-md-9 col-sm-6 col-xs-6">
+<nav class="right helper">
+<ul class="menu sf-menu js-menu menu-light">
+<li>
+<a href="https://liquidbounce.net/">Home</a>
+</li>
+<li>
+<a href="download">Download</a>
+</li>
+<li>
+<a href="donate">Donate</a>
+</li>
+<li>
+<a href="changelogs">Changelogs</a>
+</li>
+<li>
+<a href="https://github.com/CCBlueX/LiquidBounce">Source Code</a>
+</li>
+<li>
+<a href="privacy#">Documentation</a>
+<ul>
+<li>
+<a href="docs/Tutorials">Tutorials</a>
+<ul>
+<li>
+<a href="docs/Tutorials/Installation">Installation</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/CustomHUD">CustomHUD</a>
+<ul>
+<li>
+<a href="docs/CustomHUD/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/CustomHUD/Elements">Elements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/AutoSettings">AutoSettings</a>
+<ul>
+<li>
+<a href="docs/AutoSettings/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/AutoSettings/Local&#32;Settings">Local Settings</a>
+</li>
+ </ul>
+</li>
+<li>
+<a href="docs/ScriptAPI">ScriptAPI</a>
+<ul>
+<li>
+<a href="docs/ScriptAPI/Getting&#32;Started">Getting Started</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Setting&#32;up&#32;Babel">Setting up Babel</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Managers">Managers</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Modules">Creating Modules</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Commands">Creating Commands</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Inventory&#32;Tabs">Creating Inventory Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="privacy#">Community</a>
+<ul>
+<li>
+<a target="_blank" href="https://youtube.com/ccbluex">YouTube</a>
+</li>
+<li>
+<a target="_blank" href="https://twitter.com/ccbluex">Twitter</a>
+</li>
+<li>
+<a target="_blank" href="https://d.tube/#!/c/ccbluex">DTube</a>
+</li>
+<li>
+<a target="_blank" href="https://discord.gg/gdQ82He">Discord</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://forum.ccbluex.net">Forum</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="header-back header-back-simple header-back-small">
+<div class="header-back-container">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="page-info page-info-simple">
+<h1 class="page-title">Privacy Policy</h1>
+<h2 class="page-description">LiquidBounce Privacy Policy</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="container">
+<div class="row">
+<div class="col-md-12" style="text-align: justify">
+<div class="main-content">
+<h1>LiquidBounce Privacy Policy</h1>
+<p>If you require any more information or have any questions about our privacy policy,
+please feel free to contact us by email at <a href="mailto:support@liquidbounce.net">support@liquidbounce.net</a>. We consider
+ the privacy of our visitors to be extremely important. This privacy policy document
+describes in detail the types of personal information is collected and recorded by
+https://liquidbounce.net and how we use it.</p>
+<h3>1. Cookies and Web Beacons</h3>
+<p>This website uses cookies to store information about visitors' preferences, to record
+user-specific information on which pages the site visitor accesses or visits, and
+to personalize or customize our web page content based upon visitors' browser type
+or other information that the visitor sends via their browser.</p>
+<p>The following services connected to our website may use cookies:</p>
+<ul>
+<li>CloudFlare (<a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a>)</li>
+<li>Google Analytics (<a href="https://www.google.com/analytics/">https://www.google.com/analytics/</a>)</li>
+<li>Google AdSense (<a href="https://www.google.com/adsense/">https://www.google.com/adsense/</a>)</li>
+</ul>
+<h3>2. Advertising</h3>
+<p>Advertisements help us to maintain this site and keep LiquidBounce free.</p>
+<p>Our Advertising Partners are:</p>
+<ul>
+<li>Google AdSense (<a href="https://www.google.com/adsense/">https://www.google.com/adsense/</a>)</li>
+</ul>
+<h3>3. Webfonts</h3>
+<p>This website is using webfonts provided by Google.</p>
+<h3>4. Third Party Privacy Policies</h3>
+<p>Every external site linked to our website has their own Privacy Policy, which can be found on their websites.
+Their Privacy Policy applies for eny traffic to their serviced. If you have trouble finding it,
+feel free to contact us via e-Mail.</p>
+<h4>4.1 Third Party Ads</h4>
+<p>These third-party ad servers or ad networks use technology in their respective advertisements and
+links that appear on our website and which are sent directly to your browser. They automatically
+receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web
+Beacons) may also be used by our site's third-party ad networks to measure the effectiveness of
+their advertising campaigns and/or to personalize the advertising content that you see on the
+site. We are NOT responsible for any damage dealt to your operating system, hardware, etc.
+by visiting the external websites connected to the displayed advertisments. We do NOT have access
+to or control over these cookies that are used by third-party advertisers.</p>
+<p>You should consult the respective privacy policies of these third-party ad servers for more
+detailed information on their practices as well as for instructions about how to opt-out
+of certain practices. LiquidBounce's privacy policy does not apply to, and we cannot control
+the activities of, such other advertisers or web sitess.</p>
+<p>If you wish to disable cookies, you may do so through your individual browser options. More
+detailed information about cookie management with specific web browsers can be found
+at the browsers' respective websites.</p>
+<h3>5. Online Privacy Policy Only</h3>
+<p>This privacy policy applies only to our online activities and is valid for visitors to our website
+and regarding information shared and/or collected there. This policy does not apply to any
+information collected offline or via channels other than this website.</p>
+<h3>6. Consent</h3>
+<p>By using our website, you hereby consent to our privacy policy and agree to its <a href="https://liquidbounce.net/TOS">TOS</a>.</p>
+<h3>Update</h3>
+<p>This Privacy Policy was last updated on: Wednesday, January 29th, 2020.</p>
+<p>Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="js-footer-is-fixed">
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="footer-logo-wrapper">
+<a href="index.html" class="logo-image ">
+<img src="img/logos/ccbluex-logo.png" alt="logo">
+</a>
+<p class="slogan">Made
+<br>By
+<br>CCBlueX
+</p>
+</div>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-12">
+<div class="footer-wrapper">
+<span class="scroll-top js-scroll-top">
+<i class="fa fa-angle-up"></i>
+</span>
+<ul class="footer-menu helper right">
+<li>
+<a href="privacy">Privacy Policy</a>
+</li>
+<li>
+<a href="tos">Terms of Service</a>
+</li>
+<li>
+<a href="mailto:support@liquidbounce.net">support@liquidbounce.net</a>
+</li>
+</ul>
+<p class="copyright helper right">&copy;
+<a href="https://ccbluex.net">CCBlueX</a> 2015-2020
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="js/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidBounce &bull; FAQ</title>
+<meta name="author" content="CCBlueX">
+<meta name="description" content="Find out more about LiquidBounce by reading the FAQ.">
+<meta name="page-topic" content="LiquidBounce">
+<meta http-equiv="content-language" content="en">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="liquidbounce, liquid, bounce, hack, hacked client, cheat, minecraft, mc, free, download, mc, mojang, hacker, cheater">
+<meta property="og:image" content="/img/logos/favicon.png">
+<script src="cdn-cgi/apps/head/f0DW88jjTX2flLOy4SwQchuhDFw.js"></script><link rel="icon" type="image/png" href="img/logos/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="js/modernizr.js"></script>
+</head>
+<body class="">
+<div class="page js-page ">
+<div class="header header-over large">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<a href="https://liquidbounce.net/" class="logo-image logo-animated">
+<img src="img/logos/logo-light.svg" alt="logo">
+</a>
+</div>
+<div class="col-md-9 col-sm-6 col-xs-6">
+<nav class="right helper">
+<ul class="menu sf-menu js-menu menu-light">
+<li>
+<a href="https://liquidbounce.net/">Home</a>
+</li>
+<li>
+<a href="download">Download</a>
+</li>
+<li>
+<a href="donate">Donate</a>
+</li>
+<li>
+<a href="changelogs">Changelogs</a>
+</li>
+<li>
+<a href="https://github.com/CCBlueX/LiquidBounce">Source Code</a>
+</li>
+<li>
+<a href="faq#">Documentation</a>
+<ul>
+<li>
+<a href="docs/Tutorials">Tutorials</a>
+<ul>
+<li>
+<a href="docs/Tutorials/Installation">Installation</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/CustomHUD">CustomHUD</a>
+<ul>
+<li>
+<a href="docs/CustomHUD/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/CustomHUD/Elements">Elements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="docs/AutoSettings">AutoSettings</a>
+<ul>
+<li>
+<a href="docs/AutoSettings/Overview">Overview</a>
+</li>
+<li>
+<a href="docs/AutoSettings/Local&#32;Settings">Local Settings</a>
+</li>
+</ul>
+ </li>
+<li>
+<a href="docs/ScriptAPI">ScriptAPI</a>
+<ul>
+<li>
+<a href="docs/ScriptAPI/Getting&#32;Started">Getting Started</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Setting&#32;up&#32;Babel">Setting up Babel</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Managers">Managers</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Modules">Creating Modules</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Commands">Creating Commands</a>
+</li>
+<li>
+<a href="docs/ScriptAPI/Creating&#32;Inventory&#32;Tabs">Creating Inventory Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="faq#">Community</a>
+<ul>
+<li>
+<a target="_blank" href="https://youtube.com/ccbluex">YouTube</a>
+</li>
+<li>
+<a target="_blank" href="https://twitter.com/ccbluex">Twitter</a>
+</li>
+<li>
+<a target="_blank" href="https://d.tube/#!/c/ccbluex">DTube</a>
+</li>
+<li>
+<a target="_blank" href="https://discord.gg/gdQ82He">Discord</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://forum.ccbluex.net">Forum</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="header-back header-back-simple header-back-small">
+<div class="header-back-container">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="page-info page-info-simple">
+<h1 class="page-title">FAQ</h1>
+<h2 class="page-description">Begin typing your question. If we don&#39;t have an answer
+for it in our FAQ, get in touch with us.</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="category-info helper pt0" id="instant-search">
+<h3 class="category-title">Instant search</h3>
+<h4 class="category-description">A collection of frequently asked questions and their answers.</h4>
+</div>
+<div class="faq-filter js-faq-filter" data-target="#my-faq">
+<input type="text" placeholder="How to ..."> </div>
+<ul class="faq js-faq" id="my-faq">
+<li class="faq-item">
+<h4 class="faq-question">How do I <span class="faq-keyword">install</span> LiquidBounce?</h4>
+<div class="faq-answer"> Installing LiquidBounce is very easy. Just follow the steps
+described in the <a href="docs/Tutorials/Installation">installation instructions</a>.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">Is LiquidBounce <span class="faq-keyword">safe</span> to use?</h4>
+<div class="faq-answer"> Yes, it is safe to use LiquidBounce. We can guarantee that it does
+not contain any viruses, adware, crypto miners or other junkware. Also, LiquidBounce
+is <a href="https://github.com/CCBlueX/LiquidBounce">open source</a>. That means
+the source code is freely available. So if we ever violate our own statutes, it
+would be noticed immediately.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">How do you make <span class="faq-keyword">money</span> if LiquidBounce is free?</h4>
+<div class="faq-answer"> LiquidBounce is completely free. Nevertheless, we do have some ways to earn money
+with our work. On the one hand there are banners on this page, so if you want to support us
+for free, deactivate your AdBlocker, on the other hand we accept <a href="donate">donations</a>.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">How do I <span class="faq-keyword">update</span> LiquidBounce?</h4>
+<div class="faq-answer"> LiquidBounce will inform you after launch if a new version has been released.
+To update, simply download LiquidBounce again and overwrite the old file in your Mods folder.
+The next time you start LiquidBounce, you should have the latest version installed.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">How do I change <span class="faq-keyword">keybinds</span>?</h4>
+<div class="faq-answer"> Currently it is not possible to configure keybinds in the ClickGUI. Instead you
+have to use the bind command in chat. The
+syntax of the command is '.bind &lt;module&gt; &lt;key&gt;'; to remove a keybind, use '.bind &lt;module&gt; none'.
+<br><br>
+Example: '.bind KillAura R'
+</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">My <span class="faq-keyword">HUD</span> is gone! How do I re-enable it?</h4>
+<div class="faq-answer"> You might accidentally disable HUD. However, this problem can be easily
+addressed: Just open the ClickGUI by pressing RSHIFT and enable the HUD module which
+can be found in the render panel.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">How can I make the <span class="faq-keyword">ClickGUI</span> smaller?</h4>
+<div class="faq-answer"> If you have a small screen, the ClickGUI may be so large that you cannot
+see all the settings of certain modules. To solve this problem, right-click the module
+called ClickGUI and lower the scale value.</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">My <span class="faq-keyword">KillAura</span> isn't working! How can I fix it?</h4>
+<div class="faq-answer"> There are many possible explanations for this problem. Before you contact us,
+check if one of the following approaches solves it:<br>
+&bull; Make sure players are marked as targets.<br>
+&bull; If AntiBot is enabled, disable it for testing.<br>
+&bull; Make sure you are not using mods which are known to cause such problems (e.g. BetterAnimations).<br>
+&bull; Some servers attempt to confuse KillAuras by pretending players are dead. To ensure that
+KillAura still attacks, activate Dead as target.
+</div>
+</li>
+<li class="faq-item">
+<h4 class="faq-question">Is LiquidBounce compatible with all <span class="faq-keyword">Forge mods</span>?</h4>
+<div class="faq-answer"> No, there are some mods that are not compatible with LiquidBounce (e.g. BetterAnimations).
+As a rule of thumb you can remember that mods that make major changes to Minecraft or its GUI will not work
+with LiquidBounce. So don't even try to use the client with large mod packs.</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="js-footer-is-fixed">
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="footer-logo-wrapper">
+<a href="index.html" class="logo-image ">
+<img src="img/logos/ccbluex-logo.png" alt="logo">
+</a>
+<p class="slogan">Made
+<br>By
+<br>CCBlueX
+</p>
+</div>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-12">
+<div class="footer-wrapper">
+<span class="scroll-top js-scroll-top">
+<i class="fa fa-angle-up"></i>
+</span>
+<ul class="footer-menu helper right">
+<li>
+<a href="privacy">Privacy Policy</a>
+</li>
+<li>
+<a href="tos">Terms of Service</a>
+</li>
+<li>
+<a href="mailto:support@liquidbounce.net">support@liquidbounce.net</a>
+</li>
+</ul>
+<p class="copyright helper right">&copy;
+<a href="https://ccbluex.net">CCBlueX</a> 2015-2020
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="js/all.js"></script>
+</body>
+</html>

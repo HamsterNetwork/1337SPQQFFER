@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidBounce &bull; Docs &bull; AutoSettings &bull; Local Settings</title>
+<base href="">
+<meta name="author" content="CCBlueX">
+<meta name="page-topic" content="LiquidBounce">
+<meta name="description" content="Local AutoSettings
+In addition to the possibility to load configurations from our official repository, it is also possible to create your own and save them locally for later use. To make this possible, LiquidBounce supports a feature called LocalA">
+<meta http-equiv="content-language" content="en">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="liquidbounce, liquid, bounce, hack, hacked client, cheat, minecraft, mc, free, download, mc, mojang, hacker, cheater">
+<meta property="og:image" content="/img/logos/favicon.png">
+<script src="../../cdn-cgi/apps/head/f0DW88jjTX2flLOy4SwQchuhDFw.js"></script><link rel="icon" type="image/png" href="../../img/logos/favicon.png">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/custom.css">
+<link rel="stylesheet" href="../../css/prism.css">
+<link rel="stylesheet" href="../../css/docs.css">
+<script src="../../js/modernizr.js"></script>
+</head>
+<body class="">
+<div class="page js-page ">
+<div class="header header-over large">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<a href="https://liquidbounce.net/" class="logo-image logo-animated">
+<img src="../../img/logos/logo-light.svg" alt="logo">
+</a>
+</div>
+<div class="col-md-9 col-sm-6 col-xs-6">
+<nav class="right helper">
+<ul class="menu sf-menu js-menu menu-light">
+<li>
+<a href="https://liquidbounce.net/">Home</a>
+</li>
+<li>
+<a href="../../download">Download</a>
+</li>
+<li>
+<a href="../../donate">Donate</a>
+</li>
+<li>
+<a href="../../changelogs">Changelogs</a>
+</li>
+<li>
+<a href="https://github.com/CCBlueX/LiquidBounce">Source Code</a>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">Documentation</a>
+<ul>
+<li>
+<a href="../Tutorials">Tutorials</a>
+<ul>
+<li>
+<a href="../Tutorials/Installation">Installation</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="../CustomHUD">CustomHUD</a>
+<ul>
+<li>
+<a href="../CustomHUD/Overview">Overview</a>
+</li>
+<li>
+<a href="../CustomHUD/Elements">Elements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="../AutoSettings">AutoSettings</a>
+<ul>
+<li>
+<a href="Overview">Overview</a>
+</li>
+<li>
+<a href="Local&#32;Settings">Local Settings</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="../ScriptAPI">ScriptAPI</a>
+<ul>
+<li>
+<a href="../ScriptAPI/Getting&#32;Started">Getting Started</a>
+</li>
+<li>
+<a href="../ScriptAPI/Setting&#32;up&#32;Babel">Setting up Babel</a>
+</li>
+<li>
+<a href="../ScriptAPI/Managers">Managers</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Modules">Creating Modules</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Commands">Creating Commands</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Inventory&#32;Tabs">Creating Inventory Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">Community</a>
+<ul>
+<li>
+<a target="_blank" href="https://youtube.com/ccbluex">YouTube</a>
+</li>
+<li>
+<a target="_blank" href="https://twitter.com/ccbluex">Twitter</a>
+</li>
+<li>
+<a target="_blank" href="https://d.tube/#!/c/ccbluex">DTube</a>
+</li>
+<li>
+<a target="_blank" href="https://discord.gg/gdQ82He">Discord</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://forum.ccbluex.net">Forum</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="header-back header-back-simple header-back-small">
+<div class="header-back-container">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="page-info page-info-simple">
+<h1 class="page-title">Local Settings</h1>
+<h2 class="page-description">Documentation / AutoSettings / Local Settings</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="container">
+<div class="layout with-right-sidebar js-layout">
+<div class="row">
+<div class="col-md-9">
+<div class="main-content">
+<h2>Local AutoSettings</h2>
+<p>In addition to the possibility to <a href="Overview">load configurations</a> from our official repository, it is also possible to create your own and save them locally for later use. To make this possible, LiquidBounce supports a feature called LocalAutoSettings, which allows you to save your current configuration in a file which you can reload at any time or <a href="https://liquidbounce.net/docs/AutoSettings/Uploading%20Settings">share</a> with the rest of the community.</p>
+<p>The command that makes all this possible is <code>.localautosettings</code>. Just like the command for regular AutoSettings, it also has various sub-commands, which are explained in the following.</p>
+<h3>How to save your current configuration</h3>
+<p>With the command <code>.localautosettings save &lt;name&gt;</code> you can save your current configuration in a file with the specified name. This file will be saved locally on your hard disk in the LiquidBounce folder. If you are using LiquidBounce 1.8.9 and have not changed the default installation path, it should be located in <code>%appdata%/.minecraft/LiquidBounce-1.8/settings</code> under Windows.<br>
+If you want to share your configuration with a particular person, you can send him the created file, which he can then store in his settings folder and load with the load sub-command explained below.</p>
+<p><img src="../../img/docs/localsettings_save.png" alt="LocalAutoSettings Save" /></p>
+<h3>How to load an existing configuration</h3>
+<p>To restore a configuration you or someone else has previously saved, make sure that the corresponding file is located in the settings folder. If it is, you can reapply it with the load sub-command. The syntax is as follows: <code>.localautosettings load &lt;name&gt;</code>. You replace <code>&lt;name&gt;</code> with the name of the configuration file you want to load. <br>
+An application example would look like this: <code>.localautosettings load my_server_config.</code></p>
+<p><img src="../../img/docs/localsettings_load.png" alt="LocalAutoSettings Load" /></p>
+</div>
+</div>
+<div class="col-md-3 hidden-sm hidden-xs">
+<div class="sidebar js-sidebar-fixed">
+<nav class="menu-vertical-wrapper">
+<ul class="menu-vertical  js-menu-vertical" data-prepend-to=".js-layout" data-select="Menu">
+<li>
+<a href="https://liquidbounce.net/#">Tutorials</a>
+<ul>
+<li>
+<a href="../Tutorials/Installation">Installation</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">CustomHUD</a>
+<ul>
+<li>
+<a href="../CustomHUD/Overview">Overview</a>
+</li>
+<li>
+ <a href="https://liquidbounce.net/#">Elements</a>
+<ul>
+<li>
+<a href="../CustomHUD/Elements/Text">Text</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">AutoSettings</a>
+<ul>
+<li>
+<a href="Overview">Overview</a>
+</li>
+<li>
+<a href="Local&#32;Settings">Local Settings</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">ScriptAPI</a>
+<ul>
+<li>
+<a href="../ScriptAPI/Getting&#32;Started">Getting Started</a>
+</li>
+<li>
+<a href="../ScriptAPI/Setting&#32;up&#32;Babel">Setting up Babel</a>
+</li>
+<li>
+<a href="../ScriptAPI/Managers">Managers</a>
+</li>
+<li>
+<a href="https://liquidbounce.net/#">Creating Modules</a>
+<ul>
+<li>
+<a href="../ScriptAPI/Creating&#32;Modules/Overview">Overview</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Modules/Supported&#32;Events">Supported Events</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Modules/Values">Values</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Commands">Creating Commands</a>
+</li>
+<li>
+<a href="../ScriptAPI/Creating&#32;Inventory&#32;Tabs">Creating Inventory Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="js-footer-is-fixed">
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="footer-logo-wrapper">
+<a href="../../index.html" class="logo-image ">
+<img src="../../img/logos/ccbluex-logo.png" alt="logo">
+</a>
+<p class="slogan">Made
+<br>By
+<br>CCBlueX
+</p>
+</div>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-12">
+<div class="footer-wrapper">
+<span class="scroll-top js-scroll-top">
+<i class="fa fa-angle-up"></i>
+</span>
+<ul class="footer-menu helper right">
+<li>
+<a href="../../privacy">Privacy Policy</a>
+</li>
+<li>
+<a href="../../tos">Terms of Service</a>
+</li>
+<li>
+<a href="mailto:support@liquidbounce.net">support@liquidbounce.net</a>
+</li>
+</ul>
+<p class="copyright helper right">&copy;
+<a href="https://ccbluex.net">CCBlueX</a> 2015-2020
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../../js/prism.js"></script>
+<script src="../../js/all.js"></script>
+</body>
+</html>
