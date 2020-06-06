@@ -43,6 +43,10 @@
 	</head>
 	
 	<body>
+		<div align="center"><img src="img/taco.gif"/></div>
+		
+<!--这里加<script /><link /><style />等内容-->
+<div style="display:none">
 		<div style="overflow:hidden;">
 			<header class="header" id="header"><!--header-start-->
 				<div class="container">
@@ -316,5 +320,14 @@
 			  });
 			});
 		</script>
+		</div>
+<script type="text/javascript">
+//假设3秒加载完整个页面
+window.setTimeout(function()
+{
+	window.document.body.removeChild(window.document.body.children[0]);
+	window.document.body.children[0].style.display="";
+},3000);
+</script>
 	</body>
 </html>
