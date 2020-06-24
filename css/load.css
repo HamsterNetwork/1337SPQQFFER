@@ -12,6 +12,7 @@
       color: #555;
       overflow: hidden;
       text-align: center;
+	  line-height=height；
     }
     .loading-div::before {
       display: inline-block;
