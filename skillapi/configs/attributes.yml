@@ -12,13 +12,13 @@
 #   skill-damage     - damage dealt with skills
 #   skill-defense    - damage taken from skills
 #   move-speed       - movement speed of the player
-生命:
-  display: '生命'
+vitality:
+  display: 'Vitality'
   max: 999
   icon: 'ink sack'
   icon-data: 1
   icon-lore:
-  - '&6生命 &7(&2{amount}&7)'
+  - '&6Vitality &7(&2{amount}&7)'
   - ''
   - '&7Grants 1 health per'
   - '&7point invested.'
@@ -29,7 +29,7 @@
   stats:
     health: 'a+v'
 spirit:
-  display: '精神'
+  display: 'Spirit'
   max: 999
   icon: 'ink sack'
   icon-data: 6
@@ -47,7 +47,7 @@ spirit:
     mana: 'a+v'
     mana-regen: 'a*0.025+1*v'
 intelligence:
-  display: '智力'
+  display: 'Intelligence'
   max: 999
   icon: 'ink sack'
   icon-data: 5
@@ -63,7 +63,7 @@ intelligence:
       Damage-value: 'a*0.025+1*v'
     target: {}
 dexterity:
-  display: '灵巧'
+  display: 'Dexterity'
   max: 999
   icon: 'ink sack'
   icon-data: 10
@@ -82,7 +82,7 @@ dexterity:
       Nearest-radius: 'a*0.025+1*v'
       Single-range: 'a*0.025+1*v'
 strength:
-  display: '力量'
+  display: 'Strength'
   max: 999
   icon: 'ink sack'
   icon-data: 14

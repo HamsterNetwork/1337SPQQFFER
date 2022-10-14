@@ -5,6 +5,13 @@
  *
  * @constructor
  */ 
+ let rep_ATTRIBS = [
+    'vitality' = "生命",
+    'spirit' = "精神",
+    'intelligence' = "智力",
+    'dexterity' = "灵巧",
+    'strength' = "力量"
+];
 function Class(name) 
 {
 	this.dataKey = 'attributes';
@@ -52,9 +59,9 @@ Class.prototype.updateAttribs = function(i)
     for (j = 0; j < ATTRIBS.length; j++)
     {
         var attrib = ATTRIBS[j].toLowerCase();
-        var format = attrib.charAt(0).toUpperCase() + attrib.substr(1);
+        var format = rep_ATTRIBS[attrib];
         this.data.splice(i + j, 0, new AttributeValue(format, attrib.toLowerCase(), 0, 0)
-            .setTooltip('The amount of ' + attrib + ' the class should have')
+            .setTooltip('The amount of ' + format + ' the class should have')
         );
         if (back[attrib]) 
         {
