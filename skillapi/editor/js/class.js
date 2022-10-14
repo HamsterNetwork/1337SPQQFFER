@@ -5,13 +5,15 @@
  *
  * @constructor
  */ 
- let rep_ATTRIBS = [
-    'vitality' = "生命",
-    'spirit' = "精神",
-    'intelligence' = "智力",
-    'dexterity' = "灵巧",
-    'strength' = "力量"
-];
+ var rep_ATTRIBS = {
+	vitality:"生命",
+    spirit:"精神",
+    intelligence:"智力",
+    dexterity:"灵巧",
+    strength:"力量"
+ }
+    
+;
 function Class(name) 
 {
 	this.dataKey = 'attributes';
