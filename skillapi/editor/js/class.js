@@ -51,8 +51,8 @@ Class.prototype.updateAttribs = function(i)
     this.attribCount = 0;
     for (j = 0; j < ATTRIBS.length; j++)
     {
-        var attrib = ATTRIBS[j];
-        var format = ATTRIBS[j];
+        var attrib = ATTRIBS[j].toLowerCase();
+        var format = attrib.charAt(0).toUpperCase() + attrib.substr(1);
         this.data.splice(i + j, 0, new AttributeValue(format, attrib.toLowerCase(), 0, 0)
             .setTooltip('The amount of ' + attrib + ' the class should have')
         );
@@ -99,7 +99,7 @@ Class.prototype.createFormHTML = function()
         {
             var dragInstructions = document.createElement('label');
             dragInstructions.id = 'attribute-label';
-            dragInstructions.innerHTML = '拖放attributes.yml 文件以查看自定义属性';
+            dragInstructions.innerHTML = '拖放属性.yml 文件以查看自定义属性';
             form.appendChild(dragInstructions);
             this.updateAttribs(i + 1);
         }
