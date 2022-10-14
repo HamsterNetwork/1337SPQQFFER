@@ -47,7 +47,7 @@ spirit:
     mana: 'a+v'
     mana-regen: 'a*0.025+1*v'
 intelligence:
-  display: 'Intelligence'
+  display: '智力'
   max: 999
   icon: 'ink sack'
   icon-data: 5
