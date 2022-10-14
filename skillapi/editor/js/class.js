@@ -21,17 +21,17 @@ function Class(name)
 		new ListValue('父职业', 'parent', ['None'], 'None').setTooltip('能够转职为这个职业的职业，例如，战士能够转职为骑士，骑士的父职业就是战士。'),
 		new ListValue('权限', 'needs-permission', ['True', 'False'], 'False').setTooltip('选择这个职业是否需要权限，如果需要，那么权限节点应该是这样："skillapi.class.{职业名称}"'),
         new ByteListValue('经验来源', 'exp-source', [ '生物 Mob', '方块破坏 Block Break', '方块放置 Block Place', '合成 Craft', '使用指令 Command', '特殊 Special', '经验瓶 Exp Bottle', '熔炼 Smelt', '任务 Quest' ], 273).setTooltip('这个职业升级经验的来源，大部分都只在config.yml use-exp-orbs激活的时候才有效。'),
-		new AttributeValue('生命值', 'health', 20, 0).setTooltip('The amount of health the class has'),
-		new AttributeValue('Mana', 'mana', 20, 0).setTooltip('The amount of mana the class has'),
-		new DoubleValue('Mana Regen', 'mana-regen', 1, 0).setTooltip('The amount of mana the class regens each interval. The interval is in the config.yml and by default is once every second. If you want to regen a decimal amount per second, increase the interval.'),
-		new ListValue('Skill Tree', 'tree', [ 'Basic Horizontal', 'Basic Vertical', 'Level Horizontal', 'Level Vertical', 'Flood', 'Requirement' ], 'Requirement'),
-		new StringListValue('Skills (one per line)', 'skills', []).setTooltip('The skills the class is able to use'),
-		new ListValue('Icon', 'icon', getMaterials, 'Jack O Lantern').setTooltip('The item that represents the class in GUIs'),
-		new IntValue('Icon Data', 'icon-data', 0).setTooltip('The data/durability value of the item that represents the class in GUIs'),
-		new StringListValue('Icon Lore', 'icon-lore', [
+		new AttributeValue('生命值', 'health', 20, 0).setTooltip('职业的生命值'),
+		new AttributeValue('Mana', 'mana', 20, 0).setTooltip('职业的Mana'),
+		new DoubleValue('Mana回复', 'mana-regen', 1, 0).setTooltip('每个间隔恢复的法力值. 间隔在config.yml中设置，默认为1秒.如果想设置小数请增加间隔'),
+		new ListValue('技能树', 'tree', [ 'Basic Horizontal', 'Basic Vertical', 'Level Horizontal', 'Level Vertical', 'Flood', 'Requirement' ], 'Requirement'),
+		new StringListValue('技能 (每行一个)', 'skills', []).setTooltip('The skills the class is able to use'),
+		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('The item that represents the class in GUIs'),
+		new IntValue('图标数据', 'icon-data', 0).setTooltip('The data/durability value of the item that represents the class in GUIs'),
+		new StringListValue('图标Lore', 'icon-lore', [
 			'&d' + name
 		]),
-		new StringListValue('Unusable Items', 'blacklist', [ ]).setTooltip('The types of items that the class cannot use (one per line)'),
+		new StringListValue('不可用物品', 'blacklist', [ ]).setTooltip('The types of items that the class cannot use (one per line)'),
 		new StringValue('Action Bar', 'action-bar', '').setTooltip('The format for the action bar. Leave blank to use the default formatting.')
 	];
     
@@ -109,7 +109,7 @@ Class.prototype.createFormHTML = function()
 	form.appendChild(hr);
 	
 	var save = document.createElement('h5');
-	save.innerHTML = 'Save Class',
+	save.innerHTML = '保存职业',
 	save.classData = this;
 	save.addEventListener('click', function(e) {
 		this.classData.update();
@@ -118,7 +118,7 @@ Class.prototype.createFormHTML = function()
 	form.appendChild(save);
 	
 	var del = document.createElement('h5');
-	del.innerHTML = 'Delete',
+	del.innerHTML = '删除',
 	del.className = 'cancelButton';
 	del.addEventListener('click', function(e) {
 		var list = document.getElementById('classList');

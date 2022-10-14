@@ -22,11 +22,11 @@
  * THE SOFTWARE.
  */
 let ATTRIBS = [
-    'vitality',
-    'spirit',
-    'intelligence',
-    'dexterity',
-    'strength'
+    '生命',
+    '精神',
+    '智力',
+    '灵活',
+    '力量'
 ];
 
 depend('filter');
