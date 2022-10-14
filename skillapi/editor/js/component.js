@@ -1002,7 +1002,7 @@ function ConditionAttribute()
 
     this.description = 'Requires the target to have a given number of attributes';
 
-    this.data.push(new StringValue('Attribute', 'attribute', '生命')
+    this.data.push(new StringValue('Attribute', 'attribute', 'Vitality')
         .setTooltip('The name of the attribute you are checking the value of')
     );
     this.data.push(new AttributeValue('Min', 'min', 0, 0)

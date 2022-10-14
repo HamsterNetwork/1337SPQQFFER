@@ -29,7 +29,7 @@ vitality:
   stats:
     health: 'a+v'
 spirit:
-  display: 'Spirit'
+  display: '精神'
   max: 999
   icon: 'ink sack'
   icon-data: 6
@@ -63,7 +63,7 @@ intelligence:
       Damage-value: 'a*0.025+1*v'
     target: {}
 dexterity:
-  display: 'Dexterity'
+  display: '灵巧'
   max: 999
   icon: 'ink sack'
   icon-data: 10
@@ -82,7 +82,7 @@ dexterity:
       Nearest-radius: 'a*0.025+1*v'
       Single-range: 'a*0.025+1*v'
 strength:
-  display: 'Strength'
+  display: '力量'
   max: 999
   icon: 'ink sack'
   icon-data: 14
