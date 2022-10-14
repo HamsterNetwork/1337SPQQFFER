@@ -13,7 +13,7 @@
 #   skill-defense    - damage taken from skills
 #   move-speed       - movement speed of the player
 vitality:
-  display: 'Vitality'
+  display: '生命'
   max: 999
   icon: 'ink sack'
   icon-data: 1
