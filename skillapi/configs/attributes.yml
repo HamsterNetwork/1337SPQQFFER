@@ -12,13 +12,13 @@
 #   skill-damage     - damage dealt with skills
 #   skill-defense    - damage taken from skills
 #   move-speed       - movement speed of the player
-vitality:
+生命:
   display: '生命'
   max: 999
   icon: 'ink sack'
   icon-data: 1
   icon-lore:
-  - '&6Vitality &7(&2{amount}&7)'
+  - '&6生命 &7(&2{amount}&7)'
   - ''
   - '&7Grants 1 health per'
   - '&7point invested.'
