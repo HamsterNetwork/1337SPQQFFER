@@ -99,7 +99,7 @@ Class.prototype.createFormHTML = function()
         {
             var dragInstructions = document.createElement('label');
             dragInstructions.id = 'attribute-label';
-            dragInstructions.innerHTML = 'Drag/Drop your attributes.yml file to see custom attributes';
+            dragInstructions.innerHTML = '拖放attributes.yml 文件以查看自定义属性';
             form.appendChild(dragInstructions);
             this.updateAttribs(i + 1);
         }
