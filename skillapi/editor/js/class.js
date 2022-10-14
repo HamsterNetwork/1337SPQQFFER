@@ -62,8 +62,8 @@ Class.prototype.updateAttribs = function(i)
     {
         var attrib = ATTRIBS[j].toLowerCase();
         var format = rep_ATTRIBS[attrib];
-        this.data.splice(i + j, 0, new AttributeValue(attrib, attrib.toLowerCase(), 0, 0)
-            .setTooltip('The amount of ' + attrib + ' the class should have')
+        this.data.splice(i + j, 0, new AttributeValue(format, attrib.toLowerCase(), 0, 0)
+            .setTooltip('The amount of ' + format + ' the class should have')
         );
         if (back[attrib]) 
         {
