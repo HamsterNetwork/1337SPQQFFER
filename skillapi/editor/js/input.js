@@ -231,22 +231,17 @@ ListValue.prototype.createHTML = function (target) {
     let selected = -1;
 
     const vLower = this.value.toLowerCase().replace('_', ' ');
-    // FIXME:在这里测试修复了异常报错问题
-    const list = (typeof this.list == 'function')? this.list(): this.list
+    const list = typeof this.list == 'function' ? this.list() : this.list;
+    for (let i = 0; i < list.length; i++) {
+        const option = document.createElement('option');
+        option.innerHTML = list[i];
+        this.select.add(option);
 
-    if(list){
-        for (let i = 0; i < list.length; i++) {
-            const option = document.createElement('option');
-            option.innerHTML = list[i];
-            this.select.add(option);
-
-            const lower = list[i].toLowerCase().replace('_', ' ');
-            if (lower === vLower || (selected == -1 && list[i] == 'None')) {
-                selected = i;
-            }
+        const lower = list[i].toLowerCase().replace('_', ' ');
+        if (lower === vLower || (selected == -1 && list[i] == 'None')) {
+            selected = i;
         }
     }
-
     this.select.selectedIndex = Math.max(0, selected);
     target.appendChild(this.select);
 };
@@ -911,7 +906,7 @@ MultiListValue.prototype.createHTML = function (target) {
     this.select.id = this.key;
 
     let option = document.createElement('option');
-    option.innerHTML = '- Select -';
+    option.innerHTML = '- 选择 -';
     this.select.add(option);
     const list = typeof this.list == 'function' ? this.list() : this.list;
     for (let i = 0; i < list.length; i++) {
@@ -932,7 +927,7 @@ MultiListValue.prototype.createHTML = function (target) {
     target.appendChild(this.select);
 
     this.help = document.createElement('label');
-    this.help.innerHTML = '- Click to remove -';
+    this.help.innerHTML = '- 点击移除 -';
     this.help.className = 'grayed';
     target.appendChild(this.help);
 

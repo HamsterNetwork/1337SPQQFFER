@@ -12,8 +12,6 @@
     dexterity: "灵巧",
     strength: "力量"
  }
-    
-;
 function Class(name) 
 {
 	this.dataKey = 'attributes';
@@ -22,26 +20,26 @@ function Class(name)
 	
 	// Class data
 	this.data = [
-		new StringValue('职业名称', 'name', name).setTooltip('职业的名称，不应该包含颜色代码'),
-		new StringValue('职业聊天前缀', 'prefix', '&6' + name).setTooltip('选择这个职业的玩家的聊天前缀，可以包含颜色代码'),
-		new StringValue('职业所属组', 'group', 'class').setTooltip('职业所在的组，不在同一组的职业能够同时被选择'),
-		new StringValue('法力的名称', 'mana', '&2法力').setTooltip('法力值的名称'),
-		new IntValue('职业最大等级', 'max-level', 40).setTooltip('这个职业的最大等级。如果出现转职，这个等级会被继承。'),
-		new ListValue('父职业', 'parent', ['None'], 'None').setTooltip('能够转职为这个职业的职业，例如，战士能够转职为骑士，骑士的父职业就是战士。'),
-		new ListValue('权限', 'needs-permission', ['True', 'False'], 'False').setTooltip('选择这个职业是否需要权限，如果需要，那么权限节点应该是这样："skillapi.class.{职业名称}"'),
-        new ByteListValue('经验来源', 'exp-source', [ '生物 Mob', '方块破坏 Block Break', '方块放置 Block Place', '合成 Craft', '使用指令 Command', '特殊 Special', '经验瓶 Exp Bottle', '熔炼 Smelt', '任务 Quest' ], 273).setTooltip('这个职业升级经验的来源，大部分都只在config.yml use-exp-orbs激活的时候才有效。'),
-		new AttributeValue('生命值', 'health', 20, 0).setTooltip('职业的生命值'),
-		new AttributeValue('Mana', 'mana', 20, 0).setTooltip('职业的Mana'),
-		new DoubleValue('Mana回复', 'mana-regen', 1, 0).setTooltip('每个间隔恢复的法力值. 间隔在config.yml中设置，默认为1秒.如果想设置小数请增加间隔'),
-		new ListValue('技能树', 'tree', [ 'Basic Horizontal', 'Basic Vertical', 'Level Horizontal', 'Level Vertical', 'Flood', 'Requirement' ], 'Requirement'),
-		new StringListValue('技能 (每行一个)', 'skills', []).setTooltip('The skills the class is able to use'),
-		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('The item that represents the class in GUIs'),
-		new IntValue('图标数据', 'icon-data', 0).setTooltip('The data/durability value of the item that represents the class in GUIs'),
+		new StringValue('职业名称', 'name', name).setTooltip('职业名称，不要使用颜色代码'),
+		new StringValue('前缀', 'prefix', '&6' + name).setTooltip('显示在玩家名称前的前缀，可以使用颜色代码'),
+		new StringValue('职业组', 'group', 'class').setTooltip('例如XX帮 XX团 XX族，不要重复，直接填职业名称也可以'),
+		new StringValue('法力名称', 'mana', '&2Mana').setTooltip('职业法力的名称，例如法力/能量/怒气'),
+		new IntValue('最高等级', 'max-level', 40).setTooltip('职业所能升到的最高等级，转职后仍可以被引用'),
+		new ListValue('父职业', 'parent', ['None'], 'None').setTooltip('先成为父职业才可以成为该职业 None为不需要 如需添加请将父职业加载至该编辑器'),
+		new ListValue('权限', 'needs-permission', ['True', 'False'], 'False').setTooltip('需要特定权限才能解锁 False为不需要 权限格式：skillapi.class.{职业名称}'),
+        new ByteListValue('经验来源', 'exp-source', [ '生物', '方块破坏', '方块放置', '制作', '指令', '特殊', '经验瓶', '冶炼', '任务' ], 273).setTooltip('职业经验的来源，大部分只有当 config.yml文件中的"use-exp-orbs"启用后有效'),
+		new AttributeValue('血量', 'health', 20, 0).setTooltip('职业的血量'),
+		new AttributeValue('法力值', 'mana', 20, 0).setTooltip('职业的法力值'),
+		new DoubleValue('法力恢复', 'mana-regen', 1, 0).setTooltip('每个间隔恢复的法力值. 间隔在config.yml中设置，默认为1秒.如果想设置小数请增加间隔'),
+		new ListValue('技能树类型', 'tree', [ 'Basic Horizontal', 'Basic Vertical', 'Level Horizontal', 'Level Vertical', 'Flood', 'Requirement' ], 'Requirement').setTooltip('依次为基础横向 基础纵向 阶梯横向 阶梯纵向 平铺 自定义'),
+		new StringListValue('技能 (一行一个)', 'skills', []).setTooltip('该职业可以使用的技能'),
+		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('在GUI中职业显示的图标'),
+		new IntValue('图标数据', 'icon-data', 0).setTooltip('图标的数据值/耐久度'),
 		new StringListValue('图标Lore', 'icon-lore', [
 			'&d' + name
-		]),
-		new StringListValue('不可用物品', 'blacklist', [ ]).setTooltip('The types of items that the class cannot use (one per line)'),
-		new StringValue('Action Bar', 'action-bar', '').setTooltip('The format for the action bar. Leave blank to use the default formatting.')
+		]).setTooltip('在GUI中图标显示的Lore'),
+		new StringListValue('不可用物品', 'blacklist', [ ]).setTooltip('该职业无法使用的物品(一行一个)'),
+		new StringValue('Action Bar', 'action-bar', '').setTooltip('action bar中所使用的格式 不填为默认格式')
 	];
     
     this.updateAttribs(10);
@@ -63,7 +61,7 @@ Class.prototype.updateAttribs = function(i)
         var attrib = ATTRIBS[j].toLowerCase();
         var format = rep_ATTRIBS[attrib];
         this.data.splice(i + j, 0, new AttributeValue(format, attrib.toLowerCase(), 0, 0)
-            .setTooltip('The amount of ' + format + ' the class should have')
+            .setTooltip('职业应具备的' + format)
         );
         if (back[attrib]) 
         {
@@ -81,25 +79,24 @@ Class.prototype.updateAttribs = function(i)
  */
 Class.prototype.createFormHTML = function()
 {
-	let i;
 	var form = document.createElement('form');
 	
 	var header = document.createElement('h4');
-	header.innerHTML = '职业属性';
+	header.innerHTML = '职业细节';
 	form.appendChild(header);
 	
 	var h = document.createElement('hr');
 	form.appendChild(h);
 	
 	this.data[5].list.splice(1, this.data[5].list.length - 1);
-	for (i = 0; i < classes.length; i++)
+	for (var i = 0; i < classes.length; i++)
 	{
 		if (classes[i] != this) 
 		{
 			this.data[5].list.push(classes[i].data[0].value);
 		}
 	}
-	for (i = 0; i < this.data.length; i++)
+	for (var i = 0; i < this.data.length; i++)
 	{
 		this.data[i].createHTML(form);
         
@@ -108,7 +105,7 @@ Class.prototype.createFormHTML = function()
         {
             var dragInstructions = document.createElement('label');
             dragInstructions.id = 'attribute-label';
-            dragInstructions.innerHTML = '拖放属性.yml 文件以查看自定义属性';
+            dragInstructions.innerHTML = '加载你的attributes.yml文件以显示自定义属性';
             form.appendChild(dragInstructions);
             this.updateAttribs(i + 1);
         }
@@ -279,6 +276,6 @@ function getClass(name)
 	return null;
 }
 
-var activeClass = new Class('Class 1');
+var activeClass = new Class('职业 1');
 var classes = [activeClass];
 activeClass.createFormHTML();

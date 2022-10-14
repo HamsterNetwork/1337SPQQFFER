@@ -17,33 +17,33 @@ function Skill(name)
 	
 	// Skill data
 	this.data = [
-		new StringValue('技能名称', 'name', name).setTooltip('技能的名称，不能包含颜色代码'),
-		new StringValue('技能类型', 'type', 'SomeType').setTooltip('描述技能是什么类型的技能，像是“群体法术伤害”，可以是任意值'),
-		new IntValue('技能最高等级', 'max-level', 5).setTooltip('技能能够提升到的最高等级'),
-		new ListValue('前置技能需求', 'skill-req', ['None'], 'None').setTooltip('在解锁这个技能前所需要解锁的前置技能'),
-		new IntValue('前置技能等级需求', 'skill-req-lvl', 1).setTooltip('解锁这个技能所需要的前置技能的等级要求，如果上一项为None，那么这一项无效'),
-		new ListValue('是否需要权限来解锁', 'needs-permission', ['True', 'False'], 'False').setTooltip('这个技能是否需要权限来解锁，权限的节点像是这样"skillapi.skill.{技能名称}"'),
-		new AttributeValue('职业等级需求', 'level', 1, 0).setTooltip('解锁这个技能所需要的职业等级'),
-		new AttributeValue('解锁技能所需技能点', 'cost', 1, 0).setTooltip('解锁这个技能所需要的技能点，可能升级技能也是参考这个数值，有待考证'),
-		new AttributeValue('技能冷却时间', 'cooldown', 0, 0).setTooltip('技能的冷却时间，单位是秒 (只对Cast Trigger触发器有效)'),
-		new AttributeValue('技能法力消耗', 'mana', 0, 0).setTooltip('使用这个技能所消耗的法力值(只对Cast Trigger触发器有效)'),
-		new AttributeValue('最小技能点消耗', 'points-spent-req', 0, 0).setTooltip('在升级技能之前，所需要的最少技能点'),
-		new StringValue('技能释放消息', 'msg', '&6{player} &2释放了 &6{skill}').setTooltip('当玩家释放这个技能的时候，在聊天框发出的消息，消息的半径请在config.yml中设置。'),
-        new StringValue('连击按键', 'combo', '').setTooltip('通过连续按下按键来触发技能（必须要在配置文件中激活）。 使用 L, R, S, LS, RS, P, and Q 来确定按键/鼠标点击类型，使用空格分隔. 举个例子, "L L R R" 意味着左键两下，右键两下触发技能。'),
-        new ListValue('指示器', 'indicator', [ '2D', '3D', 'None' ], '2D').setTooltip('[付费插件功能] 使用什么方案来显示图标。在casting bars设置中适用于"hover bar"设置。'),
-		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('在技能树中显示的图标。'),
-		new IntValue('自定义模型数据', 'icon-data', 0).setTooltip('使用Custom Model Data或是耐久值的模型/材质来显示这个物品。'),
-		new StringListValue('图标显示的Lore', 'icon-lore', [
+		new StringValue('技能名称', 'name', name).setTooltip('技能名称，不要使用颜色代码'),
+		new StringValue('技能类型', 'type', '单体技能').setTooltip('技能类型，例如 范围技能 单体技能，随便填'),
+		new IntValue('最高等级', 'max-level', 5).setTooltip('技能所能升到的最高等级'),
+		new ListValue('父技能', 'skill-req', ['None'], 'None').setTooltip('先解锁父技能才可以学习该技能 None为不需要 如需添加请将父技能加载至该编辑器'),
+		new IntValue('父技能等级', 'skill-req-lvl', 1).setTooltip('将父技能提升至特定等级才能学习该技能'),
+		new ListValue('权限', 'needs-permission', ['True', 'False'], 'False').setTooltip('需要特定权限才能解锁 False为不需要 权限格式：skillapi.skill.{技能名称}'),
+		new AttributeValue('职业等级', 'level', 1, 0).setTooltip('只有当职业等级达到指定要求才能学习此技能'),
+		new AttributeValue('技能点花费', 'cost', 1, 0).setTooltip('解锁以及升级此技能所需要的技能点数'),
+		new AttributeValue('冷却时间', 'cooldown', 0, 0).setTooltip('技能冷却时间(技能主动释放有效)'),
+		new AttributeValue('法力值消耗', 'mana', 0, 0).setTooltip('技能所消耗的法力值(技能主动释放有效)'),
+		new AttributeValue('最小技能点花费', 'points-spent-req', 0, 0).setTooltip('在升级此技能前需要至少花费多少技能点'),
+		new StringValue('释放信息', 'msg', '&6{player} &2释放了 &6{skill}').setTooltip('技能释放时显示给玩家的信息，信息半径在 config.yml 文件中设置'),
+        new StringValue('组合键', 'combo', '').setTooltip('使用组合键释放技能(如果开启). 使用 L, R, S, LS, RS, P, 和 Q 去释放，字母间需要一个空格(L为左键,R为右键,S为下蹲键,Q为丢物品键，P为鼠标滚轮键. 举个例子, “L L R R”就是左键左键右键右键来释放技能'),
+        new ListValue('指示器', 'indicator', [ '2D', '3D', 'None' ], '2D').setTooltip('[付费版专享] 图标在物品栏中显示的材质'),
+		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('在GUI中技能显示的图标'),
+		new IntValue('图标数据', 'icon-data', 0).setTooltip('图标的数据值/耐久度'),
+		new StringListValue('图标Lore', 'icon-lore', [
 			'&d{name} &7({level}/{max})',
-			'&2技能类型: &6{type}',
+			'&2类型: &6{type}',
 			'',
-			'{req:level}需求等级: {attr:level}',
-			'{req:cost}消耗技能点: {attr:cost}',
+			'{req:level}等级: {attr:level}',
+			'{req:cost}技能点消耗: {attr:cost}',
 			'',
-			'&2法力消耗: {attr:mana}',
+			'&2法力值消耗: {attr:mana}',
 			'&2冷却时间: {attr:cooldown}'
-		]).setTooltip('这个描述会在技能树中被展示，也就是鼠标悬停在技能图标上的时候会显示。这里面的占位符，像是伤害数值，会使用后面会提到机制中的，选择器中的或者条件中的"Icon Key"的数值来替换。'),
-		new StringListValue('不兼容技能', 'incompatible', []).setTooltip('要解锁这个技能，不能有填写的这些前置技能。')
+		]).setTooltip('在GUI中技能显示的Lore'),
+		new StringListValue('不兼容的技能', 'incompatible', []).setTooltip('如果想学习该技能，则以下技能不能被学习')
 	];
 }
 
@@ -68,11 +68,10 @@ Skill.prototype.apply = function()
  */
 Skill.prototype.createFormHTML = function()
 {
-	let i;
 	var form = document.createElement('form');
 	
 	var header = document.createElement('h4');
-	header.innerHTML = '技能属性';
+	header.innerHTML = '技能细节';
 	form.appendChild(header);
 	
     form.appendChild(document.createElement('hr'));
@@ -80,19 +79,17 @@ Skill.prototype.createFormHTML = function()
     form.appendChild(document.createElement('hr'));
 	
 	this.data[3].list.splice(1, this.data[3].list.length - 1);
-	for (i = 0; i < skills.length; i++)
+	for (var i = 0; i < skills.length; i++)
 	{
 		if (skills[i] != this) 
 		{
 			this.data[3].list.push(skills[i].data[0].value);
 		}
 	}
-
-	for (i = 0; i < this.data.length; i++)
+	for (var i = 0; i < this.data.length; i++)
 	{
 		this.data[i].createHTML(form);
 	}
-
 	
 	var hr = document.createElement('hr');
 	form.appendChild(hr);
@@ -107,7 +104,7 @@ Skill.prototype.createFormHTML = function()
 Skill.prototype.createEditButton = function(form) {
     var done = document.createElement('h5');
 	done.className = 'doneButton';
-	done.innerHTML = '返回技能编辑主页',
+	done.innerHTML = '编辑效果',
 	done.skill = this;
 	done.form = form;
 	done.addEventListener('click', function(e) {
@@ -293,7 +290,7 @@ function getSkill(name)
 }
 
 
-var activeSkill = new Skill('Skill 1');
+var activeSkill = new Skill('技能 1');
 var activeComponent = undefined;
 var skills = [activeSkill];
 activeSkill.createFormHTML();
