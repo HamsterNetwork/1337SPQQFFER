@@ -3197,6 +3197,7 @@ function MechanicValueLoreSlot() {
     );
 }
 
+
 extend('MechanicValueMana', 'Component');
 
 function MechanicValueMana() {
