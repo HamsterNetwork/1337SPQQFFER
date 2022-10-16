@@ -893,7 +893,7 @@ function TriggerPhysicalDamage() {
 extend('TriggerRightClick', 'Component');
 
 function TriggerRightClick() {
-    this.super('右键', Type.TRIGGER, true);
+    this.super('Right Click', Type.TRIGGER, true);
 
     this.description = '在执行右键时触发技能(注意:在空中点击时，你必须有一个物品在手)';
 
@@ -905,7 +905,7 @@ function TriggerRightClick() {
 extend('TriggerSkillDamage', 'Component');
 
 function TriggerSkillDamage() {
-    this.super('技能伤害', Type.TRIGGER, true);
+    this.super('Skill Damage', Type.TRIGGER, true);
 
     this.description = '当玩家造成技能伤害时触发';
 
@@ -926,7 +926,7 @@ function TriggerSkillDamage() {
 extend('TriggerTookPhysicalDamage', 'Component');
 
 function TriggerTookPhysicalDamage() {
-    this.super('受到物理伤害', Type.TRIGGER, true);
+    this.super('Took Physical Damage', Type.TRIGGER, true);
 
     this.description = '当玩家受到物理伤害(即非技能伤害)时触发.包括近战攻击和火焰伤害';
 
@@ -947,7 +947,7 @@ function TriggerTookPhysicalDamage() {
 extend('TriggerTookSkillDamage', 'Component');
 
 function TriggerTookSkillDamage() {
-    this.super('受到技能伤害', Type.TRIGGER, true);
+    this.super('Took Skill Damage', Type.TRIGGER, true);
 
     this.description = '当玩家受到技能伤害时触发，包括对自己的伤害';
 
