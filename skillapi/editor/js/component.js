@@ -1118,7 +1118,6 @@ function ConditionCeiling()
     );
 }
 
-extend('ConditionChance', 'Component');
 
 extend('ConditionChance', 'Component');
 function ConditionChance()
@@ -1134,16 +1133,17 @@ function ConditionChance()
 
 extend('ConditionClass', 'Component');
 
-function ConditionClass() {
+function ConditionClass()
+{
     this.super('Class', Type.CONDITION, true);
 
-    this.description = 'Applies child components when the target is the given class or optionally a profession of that class. For example, if you check for "Fighter" which professes into "Warrior", a "Warrior" will pass the check if you do not enable "exact".';
+    this.description = '目标需要为指定职业';
 
-    this.data.push(new StringValue('Class', 'class', 'Fighter')
-        .setTooltip('The class the player should be')
+    this.data.push(new StringValue('职业', 'class', 'Fighter')
+        .setTooltip('所需要的职业')
     );
-    this.data.push(new ListValue('Exact', 'exact', ['True', 'False'], 'False')
-        .setTooltip('Whether the player must be exactly the given class. If false, they can be a later profession of the class.')
+    this.data.push(new ListValue('精确', 'exact', [ 'True', 'False' ], 'False')
+        .setTooltip('是否需要精确的职业,False为不需要,代表曾经为该职业也算,True代表当前必须是该职业')
     );
 }
 
