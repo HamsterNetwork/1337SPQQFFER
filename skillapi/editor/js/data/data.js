@@ -1,16 +1,26 @@
 let DATA = {};
 
-const version = (localStorage.getItem('server-version') || '1.13').substr(2);
+const version = (localStorage.getItem('server-version') || '1.19').substr(2);
 
-depend('data/1.8', function() { if (version === '8') DATA = DATA_8 });7
+depend('data/1.8', function() { if (version === '8') DATA = DATA_8 });
 depend('data/1.9', function() { if (version === '9') DATA = DATA_9 });
 depend('data/1.10', function() { if (version === '10') DATA = DATA_10 });
 depend('data/1.11', function() { if (version === '11') DATA = DATA_11 });
 depend('data/1.12', function() { if (version === '12') DATA = DATA_12 });
 depend('data/1.13', function() { if (version === '13') DATA = DATA_13 });
+depend('data/1.14', function() { if (version === '14') DATA = DATA_14 });
+depend('data/1.15', function() { if (version === '15') DATA = DATA_15 });
+depend('data/1.16', function() { if (version === '16') DATA = DATA_16 });
+depend('data/1.17', function() { if (version === '17') DATA = DATA_17 });
+depend('data/1.18', function() { if (version === '18') DATA = DATA_18 });
+depend('data/1.19', function() { if (version === '19') DATA = DATA_19 });
 
 function getMaterials() {
     return DATA.MATERIALS;
+}
+
+function getDamageableMaterials() {
+	return DATA.DAMAGEABLE_MATERIALS;
 }
 
 function getAnyMaterials() {
@@ -23,6 +33,10 @@ function getSounds() {
 
 function getEntities() {
     return DATA.ENTITIES;
+}
+
+function getAnyEntities() {
+    return [ 'Any', ...DATA.ENTITIES ];
 }
 
 function getParticles() {
@@ -47,12 +61,12 @@ function getAnyPotion() {
 
 function getGoodPotions() {
     const list = DATA.POTIONS.filter(type => GOOD_POTIONS.includes(type));
-    return [ 'All', 'None', ...list ];
+    return [ 'All', ...list ];
 }
 
 function getBadPotions() {
     const list = DATA.POTIONS.filter(type => BAD_POTIONS.includes(type));
-    return [ 'All', 'None', ...list ];
+    return [ 'All', ...list ];
 }
 
 function getDyes() {

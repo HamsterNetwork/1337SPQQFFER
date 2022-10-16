@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="UTF-8"/>
-	<title>SkillAPI - 网页编辑器 Fearless 汉化</title>
+	<title>SkillAPI - Dynamic Editor</title>
 	
 	<!-- other scripts are loaded in main.js -->
 	<script src="editor/js/loader.js"></script>
@@ -21,14 +21,20 @@
 	<!-- Site header -->
 	<header>
 		<h1>Skill API</h1>
-		<h2>网页编辑器</h2>
+		<h2>Dynamic Editor</h2>
 	</header>
 
 	<div id="version">
 		<label for="version-select">
-			服务器版本
+			Server
 		</label>
 		<select id="version-select">
+			<option>1.19</option>
+			<option>1.18</option>
+			<option>1.17</option>
+			<option>1.16</option>
+			<option>1.15</option>
+			<option>1.14</option>
 			<option>1.13</option>
 			<option>1.12</option>
 			<option>1.11</option>
@@ -41,13 +47,13 @@
 	
 	<!-- IO Buttons -->
 	<div id="io">
-		<p class="ioText">拖入文件以加载</p>
-		<button id="saveButton" class="ioButton">保存全部文件</button>
+		<p class="ioText">Drop file anywhere to load</p>
+		<button id="saveButton" class="ioButton">Backup All Data</button>
 	</div>
 	
 	<!-- Display when the window is too small -->
 	<div id="small">
-		<p>请放大或缩小浏览器窗口</p>
+		<p>Please enlarge your browser window or zoom out</p>
 	</div>
 	
 	<div id="main">
@@ -55,10 +61,10 @@
 		<!-- Skill/Class Tabs -->
 		<div id="tabSpacer"></div>
 		<div id="skillTab" class="tab tabLeft tabActive">
-			技能
+			Skills
 		</div>
 		<div  id="classTab" class="tab tabRight">
-			职业
+			Classes
 		</div>
 		
 		<!-- Skill Content -->
@@ -67,15 +73,15 @@
 			<!-- Skill list -->
 			<select id="skillList" size="30">
 				<option selected="selected">Skill 1</option>
-				<option>+ 新技能</option>
+				<option>+ New Skill</option>
 			</select>
 			
 			<!-- Effect builder -->
 			<div id="builder">
-				<h6 id="skillDetails">细节设置</h6>
-				<h6 id="addTrigger">触发方式</h6>
-				<h6 id="saveSkill" class>保存技能</h6>
-				<h6 id="deleteSkill" class="cancelButton">删除</h6>
+				<h6 id="skillDetails">Details</h6>
+				<h6 id="addTrigger">Triggers</h6>
+				<h6 id="saveSkill" class>Save Skill</h6>
+				<h6 id="deleteSkill" class="cancelButton">Delete</h6>
 				<div id="builderContent"></div>
 			</div>
 			
@@ -85,27 +91,27 @@
 			
 			<!-- Trigger selection -->
 			<div id="triggerChooser">
-				<h4>触发方式</h4>
+				<h4>Triggers</h4>
 				
 				<div id="triggerOptions"></div>
 				
-				<h5 class="cancelButton">取消</h5>
+				<h5 class="cancelButton">Cancel</h5>
 			</div>
 			
 			<!-- Component selection -->
 			<div id="componentChooser">
 			
-				<h4>选取目标</h4>
+				<h4>Targets</h4>
 				<div id="targetOptions"></div>
 				
-				<h4>触发条件</h4>
+				<h4>Conditions</h4>
 				<div id="conditionOptions"></div>
 				
-				<h4>技能效果</h4>
+				<h4>Mechanics</h4>
 				<div id="mechanicOptions"></div>
 				
 				<hr/>
-				<h5 class="cancelButton">取消</h5>
+				<h5 class="cancelButton">Cancel</h5>
 				
 			</div>
 		</div>
@@ -116,7 +122,7 @@
 			<!-- Class list -->
 			<select id="classList" size="30">
 				<option selected="selected">Class 1</option>
-				<option>+ 新职业</option>
+				<option>+ New Class</option>
 			</select>
 			
 			<div id="classForm"></div>
@@ -124,9 +130,16 @@
 		
 	</div>
 	
+	<!-- Site footer -->
+	<footer>
+		<a id="bukkit" href="https://www.spigotmc.org/resources/skillapi-continued-custom-classes-skills-and-more-proskillapi.91913/" target="_blank">Spigot</a>
+		<a id="profile" href="https://promcteam.com/wiki/index.php?title=Proskillapi:Proskillapi" target="_blank">Wiki</a>
+		<a id="source" href="https://github.com/promcteam/proskillapi" target="_blank">Source Code</a>
+        <a id="irc" href="https://discord.gg/RhTyRReKyP" target="_blank">Discord</a>
+	</footer>
    
     <div id="badBrowser">
-        <p>如果卡在该页面，则说明你需要更好的浏览器！（使用谷歌或者火狐）</p>
+        <p>Get a real browser! (Use Chrome or Firefox)</p>
     </div>
 </body>
 

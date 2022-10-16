@@ -740,6 +740,82 @@ StringValue.prototype.load = function (value) {
 };
 
 /**
+ * Represents a marker for inputs of a certain category
+ *
+ * @param {string} value - the text do be displayed
+ *
+ * @constructor
+ */
+function SectionMarker(value) {
+    this.value = value;
+
+    this.component = undefined;
+    this.hidden = false;
+}
+
+SectionMarker.prototype.dupe = function () {
+    return new SectionMarker(this.value);
+};
+
+// -- Hooking up the functions at the top, see comments there -- //
+SectionMarker.prototype.requireValue = requireValue;
+SectionMarker.prototype.applyRequireValues = applyRequireValues;
+
+/**
+ * Creates the form HTML for the value and appends
+ * it to the target element
+ *
+ * @param {Element} target - the HTML element to append to
+ */
+SectionMarker.prototype.createHTML = function (target) {
+    this.component = document.createElement('section');
+    this.component.innerHTML = this.value;
+	this.component.appendChild(document.createElement('sectionr'));
+    target.appendChild(this.component);
+};
+
+/**
+ * Hides the HTML elements of the value
+ */
+SectionMarker.prototype.hide = function () {
+    if (this.component && !this.hidden) {
+        this.hidden = true;
+        this.component.style.display = 'none';
+    }
+};
+
+/**
+ * Shows the HTML elements of the value
+ */
+SectionMarker.prototype.show = function () {
+    if (this.component && this.hidden) {
+        this.hidden = false;
+        this.component.style.display = 'block';
+    }
+};
+
+/**
+ * Updates the current value using the HTML elements
+ */
+SectionMarker.prototype.update = function () {};
+
+/**
+ * Retrieves the save string for the value
+ *
+ * @param {string} spacing - the spacing to go before the value
+ */
+SectionMarker.prototype.getSaveString = function (spacing) {
+    return "";
+};
+
+/**
+ * Loads a config value
+ *
+ * @param {string} value - config string value
+ */
+SectionMarker.prototype.load = function (value) {};
+
+/**
  * Represents a fixed string value
  *
  * @param {string} name  - the display name of the value
@@ -906,7 +982,7 @@ MultiListValue.prototype.createHTML = function (target) {
     this.select.id = this.key;
 
     let option = document.createElement('option');
-    option.innerHTML = '- 选择 -';
+    option.innerHTML = '- Select -';
     this.select.add(option);
     const list = typeof this.list == 'function' ? this.list() : this.list;
     for (let i = 0; i < list.length; i++) {
@@ -927,7 +1003,7 @@ MultiListValue.prototype.createHTML = function (target) {
     target.appendChild(this.select);
 
     this.help = document.createElement('label');
-    this.help.innerHTML = '- 点击移除 -';
+    this.help.innerHTML = '- Click to remove -';
     this.help.className = 'grayed';
     target.appendChild(this.help);
 
