@@ -15,10 +15,10 @@ function canDrop(thing, target) {
  * Types of components
  */
 var Type = {
-    TRIGGER   : '触发器',
-    TARGET    : '目标',
-    CONDITION : '条件',
-    MECHANIC  : '效果'
+    TRIGGER   : 'trigger',
+    TARGET    : 'target',
+    CONDITION : 'condition',
+    MECHANIC  : 'mechanic'
 };
 
 /**
@@ -298,15 +298,15 @@ function Component(name, type, container, parent) {
     this.components = [];
     this.data       = [new StringValue('Icon Key', 'icon-key', '').setTooltip('The key used by the component in the Icon Lore. If this is set to "example" and has a value name of "value", it can be referenced using the string "{attr:example.value}".')];
     if (this.type == Type.MECHANIC) {
-        this.data.push(new ListValue('释放类型', 'counts', [ 'True', 'False' ], 'True')
-            .setTooltip('True为技能释放成功时的效果,会消耗法力并开始冷却,False为技能释放失败时的效果,该项可用于技能释放失败的惩罚')
+        this.data.push(new ListValue('Counts as Cast', 'counts', ['True', 'False'], 'True')
+            .setTooltip('Whether this mechanic running treats the skill as "casted" and will consume mana and start the cooldown. Set to false if it is a mechanic appled when the skill fails such as cleanup or an error message.')
         );
     } else if (this.type == Type.TRIGGER && name != 'Cast' && name != 'Initialize' && name != 'Cleanup') {
-        this.data.push(new ListValue('需要法力值', 'mana', [ 'True', 'False' ], 'False')
-            .setTooltip('触发该条件是否需要消耗法力值 False为不需要')
+        this.data.push(new ListValue('Mana', 'mana', ['True', 'False'], 'False')
+            .setTooltip('Whether this trigger requires the mana cost to activate')
         );
-        this.data.push(new ListValue('冷却时间归零激活', 'cooldown', [ 'True', 'False' ], 'False')
-            .setTooltip('触发该条件是否需要等冷却时间归零')
+        this.data.push(new ListValue('Cooldown', 'cooldown', ['True', 'False'], 'False')
+            .setTooltip('Whether this trigger requires to be off cooldown to activate')
         );
     }
 
@@ -355,7 +355,7 @@ Component.prototype.createBuilderHTML = function (target) {
 
     // Component label
     let label       = document.createElement('h3');
-    label.title     = '编辑 ' + this.name + ' 设置';
+    label.title     = 'Edit ' + this.name + ' options';
     label.className = this.type + 'Label';
     label.innerHTML = this.name;
     label.component = this;
@@ -369,7 +369,7 @@ Component.prototype.createBuilderHTML = function (target) {
     if (this.container) {
         let add       = document.createElement('div');
         add.className = 'builderButton';
-        add.innerHTML = '+ 添加子类';
+        add.innerHTML = '+ Add Child';
         add.component = this;
         add.addEventListener('click', function (e) {
             activeComponent = this.component;
@@ -378,7 +378,7 @@ Component.prototype.createBuilderHTML = function (target) {
         div.appendChild(add);
 
         let vision              = document.createElement('div');
-        vision.title            = '隐藏子类';
+        vision.title            = 'Hide Children';
         vision.className        = 'builderButton smallButton';
         vision.style.background = 'url("editor/img/eye.png") no-repeat center #222';
         vision.component        = this;
@@ -401,7 +401,7 @@ Component.prototype.createBuilderHTML = function (target) {
     if (this.type != Type.TRIGGER) {
         let duplicate              = document.createElement('div');
         duplicate.className        = 'builderButton smallButton';
-        duplicate.title            = '复制';
+        duplicate.title            = 'Duplicate';
         duplicate.style.background = 'url("editor/img/duplicate.png") no-repeat center #222';
         duplicate.component        = this;
         duplicate.addEventListener('click', function (e) {
@@ -415,7 +415,7 @@ Component.prototype.createBuilderHTML = function (target) {
 
     // Add the remove button
     let remove              = document.createElement('div');
-    remove.title            = '删除';
+    remove.title            = 'Remove';
     remove.className        = 'builderButton smallButton cancelButton';
     remove.style.background = 'url("editor/img/delete.png") no-repeat center #f00';
     remove.component        = this;
@@ -551,7 +551,7 @@ Component.prototype.createFormHTML = function () {
 
     let done       = document.createElement('h5');
     done.className = 'doneButton';
-    done.innerHTML = '确定';
+    done.innerHTML = 'Done';
     done.component = this;
     done.addEventListener('click', function (e) {
         this.component.update();
@@ -665,56 +665,56 @@ function CustomComponent(data) {
 extend('TriggerBlockBreak', 'Component');
 
 function TriggerBlockBreak() {
-    this.super('方块破坏', Type.TRIGGER, true);
-    this.description = '当玩家破坏指定信息的方块时触发';
+    this.super('Block Break', Type.TRIGGER, true);
+    this.description = 'Applies skill effects when a player breaks a block matching  the given details';
 
-    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
-        .setTooltip('希望被破坏的方块的类型')
+    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
+        .setTooltip('The type of block expected to be broken')
     );
-    this.data.push(new IntValue('数量', 'data', -1)
-        .setTooltip('需要破坏的方块数量(-1为破坏多少都可以)')
+    this.data.push(new IntValue('Data', 'data', -1)
+        .setTooltip('The expected data value of the block (-1 for any data value)')
     );
 }
 
 extend('TriggerBlockPlace', 'Component');
 
 function TriggerBlockPlace() {
-    this.super('方块放置', Type.TRIGGER, true);
-    this.description = '当玩家放置指定信息的方块时触发';
+    this.super('Block Place', Type.TRIGGER, true);
+    this.description = 'Applies skill effects when a player places a block matching  the given details';
 
-    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
-        .setTooltip('希望被放置的方块的类型')
+    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
+        .setTooltip('The type of block expected to be placed')
     );
-    this.data.push(new IntValue('数量', 'data', -1)
-        .setTooltip('需要放置的方块数量(-1为放置多少都可以)')
+    this.data.push(new IntValue('Data', 'data', -1)
+        .setTooltip('The expected data value of the block (-1 for any data value)')
     );
 }
 
 extend('TriggerCast', 'Component');
 
 function TriggerCast() {
-    this.super('主动释放', Type.TRIGGER, true);
+    this.super('Cast', Type.TRIGGER, true);
 
-    this.description = '使用技能栏/组合键/指令来触发技能';
+    this.description = 'Applies skill effects when a player casts the skill using either the cast command, the skill bar, or click combos.';
 }
 
 extend('TriggerCleanup', 'Component');
 
 function TriggerCleanup() {
-    this.super('技能清除', Type.TRIGGER, true);
+    this.super('Cleanup', Type.TRIGGER, true);
 
-    this.description = '当玩家遗忘或删除技能时触发,通常用于限定技';
+    this.description = 'Applies skill effects when the player disconnects or unlearns the skill. This is always applied with a skill level of 1 just for the sake of math.';
 }
 
 extend('TriggerCrouch', 'Component');
 
 function TriggerCrouch() {
-    this.super('下蹲', Type.TRIGGER, true);
+    this.super('Crouch', Type.TRIGGER, true);
 
-    this.description = '当玩家按下或松开下蹲键(shift)触发技能';
+    this.description = 'Applies skill effects when a player starts or stops crouching using the shift key.';
 
-    this.data.push(new ListValue('类型', 'type', [ 'Start Crouching', 'Stop Crouching', 'Both' ], 'Start Crouching')
-        .setTooltip('分别为 按下/松开/两者')
+    this.data.push(new ListValue('Type', 'type', ['Start Crouching', 'Stop Crouching', 'Both'], 'Start Crouching')
+        .setTooltip('Whether you want to apply components when crouching or not crouching')
     );
 }
 
@@ -723,79 +723,79 @@ extend('TriggerDeath', 'Component');
 function TriggerDeath() {
     this.super('Death', Type.TRIGGER, true);
 
-    this.description = '玩家死亡时触发技能';
+    this.description = 'Applies skill effects when a player dies.';
 }
 
 extend('TriggerDropItem', 'Component');
 
 function TriggerDropItem() {
-    this.super('丢出物品', Type.TRIGGER, true);
+    this.super('Drop Item', Type.TRIGGER, true);
 
-    this.description = '在丢出物品时触发技能';
+    this.description = 'Applies skill effects upon dropping an item';
 
-    this.data.push(new ListValue('丢出多个', 'drop multiple', ['True', 'False', 'Ignore'], 'Ignore')
-        .setTooltip('玩家需要丢出多个道具还是单个道具')
+    this.data.push(new ListValue('Drop multiple', 'drop multiple', ['True', 'False', 'Ignore'], 'Ignore')
+        .setTooltip('Whether the player has to drop multiple items or a single item')
     );
 }
 
 extend('TriggerEnvironmentDamage', 'Component');
 
 function TriggerEnvironmentDamage() {
-    this.super('环境伤害', Type.TRIGGER, true);
+    this.super('Environment Damage', Type.TRIGGER, true);
 
-    this.description = '当玩家受到指定种类的环境伤害时触发技能';
+    this.description = 'Applies skill effects when a player takes environmental damage.';
 
-    this.data.push(new ListValue('种类', 'type', DAMAGE_TYPES, 'FALL')
-        .setTooltip('伤害的种类')
+    this.data.push(new ListValue('Type', 'type', getDamageTypes, 'FALL')
+        .setTooltip('The source of damage to apply for')
     );
 }
 
 extend('TriggerFishing', 'Component');
 
 function TriggerFishing() {
-    this.super('钓鱼', Type.TRIGGER, true);
+    this.super('Fishing', Type.TRIGGER, true);
 
-    this.description = '在用鱼竿右键点击时触发技能';
+    this.description = 'Applies skill effects upon right-clicking with a fishing rod';
 }
 
 extend('TriggerFishingBite', 'Component');
 
 function TriggerFishingBite() {
-    this.super('鱼咬钩', Type.TRIGGER, true);
+    this.super('Fishing Bite', Type.TRIGGER, true);
 
-    this.description = '当鱼咬到玩家的鱼竿时触发技能';
+    this.description = 'Applies skill efects when a fish bites the fishing rod of a player';
 }
 
 extend('TriggerFishingFail', 'Component');
 
 function TriggerFishingFail() {
-    this.super('钓鱼失败', Type.TRIGGER, true);
+    this.super('Fishing Fail', Type.TRIGGER, true);
 
-    this.description = '当玩家因时机不佳而未能钓到鱼时触发技能';
+    this.description = 'Applies skill effects when a player fails to catch a fish due to poor timing.';
 }
 
 extend('TriggerFishingGrab', 'Component');
 
 function TriggerFishingGrab() {
-    this.super('钓鱼成功', Type.TRIGGER, true);
+    this.super('Fishing Grab', Type.TRIGGER, true);
 
-    this.description = '当玩家钓到鱼时触发技能';
+    this.description = 'Applies skill effects when a player catches a fish';
 }
 
 extend('TriggerFishingGround', 'Component');
 
 function TriggerFishingGround() {
-    this.super('鱼竿砸地', Type.TRIGGER, true);
+    this.super('Fishing Ground', Type.TRIGGER, true);
 
-    this.description = '当钓鱼竿的鱼钩击中地面时触发技能';
+    this.description = 'Applies skill effects when the bobber of a fishing rod hits the ground';
 }
 
 extend('TriggerFishingReel', 'Component');
 
 function TriggerFishingReel() {
-    this.super('鱼竿收杆', Type.TRIGGER, true);
+    this.super('Fishing Reel', Type.TRIGGER, true);
 
-    this.description = '当玩家在鱼竿上没有鱼的情况下将鱼竿从水中或空气中卷出时触发技能';
+    this.description = 'Applies skill effects when a player reels in a fishing rod out of water or air with no fish on the rod.';
 }
 
 extend('TriggerInitialize', 'Component');
@@ -803,7 +803,7 @@ extend('TriggerInitialize', 'Component');
 function TriggerInitialize() {
     this.super('Initialize', Type.TRIGGER, true);
 
-    this.description = '玩家复活时触发技能,可以用来做被动技能';
+    this.description = 'Applies skill effects immediately. This can be used for passive abilities.';
 }
 
 extend('TriggerItemSwap', 'Component');
