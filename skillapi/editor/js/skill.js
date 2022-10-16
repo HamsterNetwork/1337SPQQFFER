@@ -17,34 +17,34 @@ function Skill(name)
 
 	// Skill data
 	this.data = [
-		new StringValue('Name', 'name', name).setTooltip('The name of the skill. This should not contain color codes'),
-		new StringValue('Type', 'type', 'Dynamic').setTooltip('The flavor text describing the skill such as "AOE utility" or whatever you want it to be'),
-		new IntValue('Max Level', 'max-level', 5).setTooltip('The maximum level the skill can reach'),
-		new ListValue('Skill Req', 'skill-req', ['None'], 'None').setTooltip('The skill that needs to be upgraded before this one can be unlocked'),
-		new IntValue('Skill Req Level', 'skill-req-lvl', 1).setTooltip('The level that the required skill needs to reach before this one can be unlocked'),
-		new ListValue('Permission', 'needs-permission', ['True', 'False'], 'False').setTooltip('Whether or not this skill requires a permission to unlock. The permission would be "skillapi.skill.{skillName}"'),
-		new AttributeValue('Level Req', 'level', 1, 0).setTooltip('The class level the player needs to be before unlocking or upgrading this skill'),
-		new AttributeValue('Cost', 'cost', 1, 0).setTooltip('The amount of skill points needed to unlock and upgrade this skill'),
-		new AttributeValue('Cooldown', 'cooldown', 0, 0).setTooltip('The time in seconds before the skill can be cast again (only works with the Cast trigger)'),
-		new ListValue('Cooldown message', 'cooldown-message', ['True', 'False'], 'True').setTooltip('Whether to send a message when attempting to run the skill while in cooldown.'),
-		new AttributeValue('Mana', 'mana', 0, 0).setTooltip('The amount of mana it takes to cast the skill (only works with the Cast trigger)'),
-		new AttributeValue('Min Spent', 'points-spent-req', 0, 0).setTooltip('The amount of skill points that need to be spent before upgrading this skill'),
-		new StringValue('Cast Message', 'msg', '&6{player} &2has cast &6{skill}').setTooltip('The message to display to players around the caster when the skill is cast. The radius of the area is in the config.yml options'),
-        new StringValue('Combo', 'combo', '').setTooltip('The click combo to assign the skill (if enabled). Use L, R, S, LS, RS, P, Q and F for the types of clicks separated by spaces. For example, "L L R R" would work for 4 click combos.'),
-        new ListValue('Indicator', 'indicator', [ '2D', '3D', 'None' ], '2D').setTooltip('What sort of display to use for cast previews. This applies to the "hover bar" in the casting bars setup.'),
-		new ListValue('Icon', 'icon', getMaterials, 'Jack O Lantern').setTooltip('The item used to represent the skill in skill trees'),
-		new IntValue('Icon CustomModelData', 'icon-data', 0).setTooltip('The CustomModelData of the icon.'),
-		new StringListValue('Icon Lore', 'icon-lore', [
+		new StringValue('技能名称', 'name', name).setTooltip('技能名称，不要使用颜色代码'),
+		new StringValue('技能类型', 'type', '单体技能').setTooltip('技能类型，例如 范围技能 单体技能，随便填'),
+		new IntValue('最高等级', 'max-level', 5).setTooltip('技能所能升到的最高等级'),
+		new ListValue('父技能', 'skill-req', ['None'], 'None').setTooltip('先解锁父技能才可以学习该技能 None为不需要 如需添加请将父技能加载至该编辑器'),
+		new IntValue('父技能等级', 'skill-req-lvl', 1).setTooltip('将父技能提升至特定等级才能学习该技能'),
+		new ListValue('权限', 'needs-permission', ['True', 'False'], 'False').setTooltip('需要特定权限才能解锁 False为不需要 权限格式：skillapi.skill.{技能名称}'),
+		new AttributeValue('职业等级', 'level', 1, 0).setTooltip('只有当职业等级达到指定要求才能学习此技能'),
+		new AttributeValue('技能点花费', 'cost', 1, 0).setTooltip('解锁以及升级此技能所需要的技能点数'),
+		new AttributeValue('冷却时间', 'cooldown', 0, 0).setTooltip('技能冷却时间(技能主动释放有效)'),
+		new ListValue('冷却信息', 'cooldown-message', ['True', 'False'], 'True').setTooltip('在冷却期间尝试触发技能时是否发送消息。'),
+		new AttributeValue('法力值消耗', 'mana', 0, 0).setTooltip('技能所消耗的法力值(技能主动释放有效)'),
+		new AttributeValue('最小技能点花费', 'points-spent-req', 0, 0).setTooltip('在升级此技能前需要至少花费多少技能点'),
+		new StringValue('释放信息', 'msg', '&6{player} &2释放了 &6{skill}').setTooltip('技能释放时显示给玩家的信息，信息半径在 config.yml 文件中设置'),
+        new StringValue('组合键', 'combo', '').setTooltip('使用组合键释放技能(如果开启). 使用 L, R, S, LS, RS, P, 和 Q 去释放，字母间需要一个空格(L为左键,R为右键,S为下蹲键,Q为丢物品键，P为鼠标滚轮键. 举个例子, “L L R R”就是左键左键右键右键来释放技能'),
+        new ListValue('指示器', 'indicator', [ '2D', '3D', 'None' ], '2D').setTooltip('[付费版专享] 图标在物品栏中显示的材质'),
+		new ListValue('图标', 'icon', getMaterials, 'Jack O Lantern').setTooltip('在GUI中技能显示的图标'),
+		new IntValue('图标数据', 'icon-data', 0).setTooltip('图标的数据值/耐久度'),
+		new StringListValue('图标Lore', 'icon-lore', [
 			'&d{name} &7({level}/{max})',
-			'&2Type: &6{type}',
+			'&2类型: &6{type}',
 			'',
-			'{req:level}Level: {attr:level}',
-			'{req:cost}Cost: {attr:cost}',
+			'{req:level}等级: {attr:level}',
+			'{req:cost}技能点消耗: {attr:cost}',
 			'',
-			'&2Mana: {attr:mana}',
-			'&2Cooldown: {attr:cooldown}'
-		]).setTooltip('The description shown for the item in skill trees. Include values of mechanics such as damage dealt using their "Icon Key" values'),
-		new StringListValue('Incompatible', 'incompatible', []).setTooltip('List of skill names that must not be upgraded in order to upgrade this skill')
+			'&2法力值消耗: {attr:mana}',
+			'&2冷却时间: {attr:cooldown}'
+		]).setTooltip('在GUI中技能显示的Lore'),
+		new StringListValue('不兼容的技能', 'incompatible', []).setTooltip('如果想学习该技能，则以下技能不能被学习')
 	];
 }
 
@@ -72,7 +72,7 @@ Skill.prototype.createFormHTML = function()
 	var form = document.createElement('form');
 
 	var header = document.createElement('h4');
-	header.innerHTML = 'Skill Details';
+	header.innerHTML = '技能详细';
 	form.appendChild(header);
 
     form.appendChild(document.createElement('hr'));
@@ -105,7 +105,7 @@ Skill.prototype.createFormHTML = function()
 Skill.prototype.createEditButton = function(form) {
     var done = document.createElement('h5');
 	done.className = 'doneButton';
-	done.innerHTML = 'Edit Effects',
+	done.innerHTML = '编辑效果',
 	done.skill = this;
 	done.form = form;
 	done.addEventListener('click', function(e) {
@@ -291,7 +291,7 @@ function getSkill(name)
 }
 
 
-var activeSkill = new Skill('Skill 1');
+var activeSkill = new Skill('技能 1');
 var activeComponent = undefined;
 var skills = [activeSkill];
 activeSkill.createFormHTML();
