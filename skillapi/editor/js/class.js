@@ -82,7 +82,7 @@ Class.prototype.createFormHTML = function()
 	var form = document.createElement('form');
 
 	var header = document.createElement('h4');
-	header.innerHTML = 'Class Details';
+	header.innerHTML = '职业详细';
 	form.appendChild(header);
 
 	var h = document.createElement('hr');
@@ -115,7 +115,7 @@ Class.prototype.createFormHTML = function()
 	form.appendChild(hr);
 
 	var save = document.createElement('h5');
-	save.innerHTML = 'Save Class',
+	save.innerHTML = '保存职业',
 	save.classData = this;
 	save.addEventListener('click', function(e) {
 		this.classData.update();
@@ -124,7 +124,7 @@ Class.prototype.createFormHTML = function()
 	form.appendChild(save);
 
 	var del = document.createElement('h5');
-	del.innerHTML = 'Delete',
+	del.innerHTML = '删除',
 	del.className = 'cancelButton';
 	del.addEventListener('click', function(e) {
 		var list = document.getElementById('classList');
@@ -276,6 +276,6 @@ function getClass(name)
 	return null;
 }
 
-var activeClass = new Class('Class 1');
+var activeClass = new Class('职业 1');
 var classes = [activeClass];
 activeClass.createFormHTML();
