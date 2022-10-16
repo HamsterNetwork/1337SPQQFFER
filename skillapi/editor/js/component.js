@@ -401,7 +401,7 @@ Component.prototype.createBuilderHTML = function (target) {
     if (this.type != Type.TRIGGER) {
         let duplicate              = document.createElement('div');
         duplicate.className        = 'builderButton smallButton';
-        duplicate.title            = 'Duplicate';
+        duplicate.title            = '复制';
         duplicate.style.background = 'url("editor/img/duplicate.png") no-repeat center #222';
         duplicate.component        = this;
         duplicate.addEventListener('click', function (e) {
@@ -415,7 +415,7 @@ Component.prototype.createBuilderHTML = function (target) {
 
     // Add the remove button
     let remove              = document.createElement('div');
-    remove.title            = 'Remove';
+    remove.title            = '删除';
     remove.className        = 'builderButton smallButton cancelButton';
     remove.style.background = 'url("editor/img/delete.png") no-repeat center #f00';
     remove.component        = this;
@@ -551,7 +551,7 @@ Component.prototype.createFormHTML = function () {
 
     let done       = document.createElement('h5');
     done.className = 'doneButton';
-    done.innerHTML = 'Done';
+    done.innerHTML = '确定';
     done.component = this;
     done.addEventListener('click', function (e) {
         this.component.update();
@@ -665,56 +665,56 @@ function CustomComponent(data) {
 extend('TriggerBlockBreak', 'Component');
 
 function TriggerBlockBreak() {
-    this.super('Block Break', Type.TRIGGER, true);
-    this.description = 'Applies skill effects when a player breaks a block matching  the given details';
+    this.super('方块破坏', Type.TRIGGER, true);
+    this.description = '当玩家破坏指定信息的方块时触发';
 
-    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
-        .setTooltip('The type of block expected to be broken')
+    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
+        .setTooltip('希望被破坏的方块的类型')
     );
-    this.data.push(new IntValue('Data', 'data', -1)
-        .setTooltip('The expected data value of the block (-1 for any data value)')
+    this.data.push(new IntValue('数量', 'data', -1)
+        .setTooltip('需要破坏的方块数量(-1为破坏多少都可以)')
     );
 }
 
 extend('TriggerBlockPlace', 'Component');
 
 function TriggerBlockPlace() {
-    this.super('Block Place', Type.TRIGGER, true);
-    this.description = 'Applies skill effects when a player places a block matching  the given details';
+    this.super('方块放置', Type.TRIGGER, true);
+    this.description = '当玩家放置指定信息的方块时触发';
 
-    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
-        .setTooltip('The type of block expected to be placed')
+    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
+        .setTooltip('希望被放置的方块的类型')
     );
-    this.data.push(new IntValue('Data', 'data', -1)
-        .setTooltip('The expected data value of the block (-1 for any data value)')
+    this.data.push(new IntValue('数量', 'data', -1)
+        .setTooltip('需要放置的方块数量(-1为放置多少都可以)')
     );
 }
 
 extend('TriggerCast', 'Component');
 
 function TriggerCast() {
-    this.super('Cast', Type.TRIGGER, true);
+    this.super('主动释放', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player casts the skill using either the cast command, the skill bar, or click combos.';
+    this.description = '使用技能栏/组合键/指令来触发技能';
 }
 
 extend('TriggerCleanup', 'Component');
 
 function TriggerCleanup() {
-    this.super('Cleanup', Type.TRIGGER, true);
+    this.super('技能清除', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when the player disconnects or unlearns the skill. This is always applied with a skill level of 1 just for the sake of math.';
+    this.description = '当玩家遗忘或删除技能时触发,通常用于限定技';
 }
 
 extend('TriggerCrouch', 'Component');
 
 function TriggerCrouch() {
-    this.super('Crouch', Type.TRIGGER, true);
+    this.super('下蹲', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player starts or stops crouching using the shift key.';
+    this.description = '当玩家按下或松开下蹲键(shift)触发技能';
 
-    this.data.push(new ListValue('Type', 'type', ['Start Crouching', 'Stop Crouching', 'Both'], 'Start Crouching')
-        .setTooltip('Whether you want to apply components when crouching or not crouching')
+    this.data.push(new ListValue('类型', 'type', [ 'Start Crouching', 'Stop Crouching', 'Both' ], 'Start Crouching')
+        .setTooltip('分别为 按下/松开/两者')
     );
 }
 
@@ -723,79 +723,79 @@ extend('TriggerDeath', 'Component');
 function TriggerDeath() {
     this.super('Death', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player dies.';
+    this.description = '玩家死亡时触发技能';
 }
 
 extend('TriggerDropItem', 'Component');
 
 function TriggerDropItem() {
-    this.super('Drop Item', Type.TRIGGER, true);
+    this.super('丢出物品', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon dropping an item';
+    this.description = '在丢出物品时触发技能';
 
-    this.data.push(new ListValue('Drop multiple', 'drop multiple', ['True', 'False', 'Ignore'], 'Ignore')
-        .setTooltip('Whether the player has to drop multiple items or a single item')
+    this.data.push(new ListValue('丢出多个', 'drop multiple', ['True', 'False', 'Ignore'], 'Ignore')
+        .setTooltip('玩家需要丢出多个道具还是单个道具')
     );
 }
 
 extend('TriggerEnvironmentDamage', 'Component');
 
 function TriggerEnvironmentDamage() {
-    this.super('Environment Damage', Type.TRIGGER, true);
+    this.super('环境伤害', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player takes environmental damage.';
+    this.description = '当玩家受到指定种类的环境伤害时触发技能';
 
-    this.data.push(new ListValue('Type', 'type', getDamageTypes, 'FALL')
-        .setTooltip('The source of damage to apply for')
+    this.data.push(new ListValue('种类', 'type', DAMAGE_TYPES, 'FALL')
+        .setTooltip('伤害的种类')
     );
 }
 
 extend('TriggerFishing', 'Component');
 
 function TriggerFishing() {
-    this.super('Fishing', Type.TRIGGER, true);
+    this.super('钓鱼', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon right-clicking with a fishing rod';
+    this.description = '在用鱼竿右键点击时触发技能';
 }
 
 extend('TriggerFishingBite', 'Component');
 
 function TriggerFishingBite() {
-    this.super('Fishing Bite', Type.TRIGGER, true);
+    this.super('鱼咬钩', Type.TRIGGER, true);
 
-    this.description = 'Applies skill efects when a fish bites the fishing rod of a player';
+    this.description = '当鱼咬到玩家的鱼竿时触发技能';
 }
 
 extend('TriggerFishingFail', 'Component');
 
 function TriggerFishingFail() {
-    this.super('Fishing Fail', Type.TRIGGER, true);
+    this.super('钓鱼失败', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player fails to catch a fish due to poor timing.';
+    this.description = '当玩家因时机不佳而未能钓到鱼时触发技能';
 }
 
 extend('TriggerFishingGrab', 'Component');
 
 function TriggerFishingGrab() {
-    this.super('Fishing Grab', Type.TRIGGER, true);
+    this.super('钓鱼成功', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player catches a fish';
+    this.description = '当玩家钓到鱼时触发技能';
 }
 
 extend('TriggerFishingGround', 'Component');
 
 function TriggerFishingGround() {
-    this.super('Fishing Ground', Type.TRIGGER, true);
+    this.super('鱼竿砸地', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when the bobber of a fishing rod hits the ground';
+    this.description = '当钓鱼竿的鱼钩击中地面时触发技能';
 }
 
 extend('TriggerFishingReel', 'Component');
 
 function TriggerFishingReel() {
-    this.super('Fishing Reel', Type.TRIGGER, true);
+    this.super('鱼竿收杆', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player reels in a fishing rod out of water or air with no fish on the rod.';
+    this.description = '当玩家在鱼竿上没有鱼的情况下将鱼竿从水中或空气中卷出时触发技能';
 }
 
 extend('TriggerInitialize', 'Component');
@@ -803,18 +803,18 @@ extend('TriggerInitialize', 'Component');
 function TriggerInitialize() {
     this.super('Initialize', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects immediately. This can be used for passive abilities.';
+    this.description = '玩家复活时触发技能,可以用来做被动技能';
 }
 
 extend('TriggerItemSwap', 'Component');
 
 function TriggerItemSwap() {
-    this.super('Item Swap', Type.TRIGGER, true);
+    this.super('物品切换', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon pressing the swap-key on your keyboard.';
+    this.description = '在按下键盘上的切换键时触发技能';
 
-    this.data.push(new ListValue('Cancel swap', 'cancel', ['True', 'False'], 'True')
-        .setTooltip('True cancels the item swap. False allows the item swap'));
+    this.data.push(new ListValue('权限切换', 'cancel', ['True', 'False'], 'True')
+        .setTooltip('True取消物品切换，False允许切换物品'));
 }
 
 extend('TriggerKill', 'Component');
@@ -822,18 +822,18 @@ extend('TriggerKill', 'Component');
 function TriggerKill() {
     this.super('Kill', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon killing something';
+    this.description = '击杀实体时触发技能';
 }
 
 extend('TriggerLand', 'Component');
 
 function TriggerLand() {
-    this.super('Land', Type.TRIGGER, true);
+    this.super('落地', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player lands on the ground.';
+    this.description = '玩家落地时触发技能';
 
-    this.data.push(new DoubleValue('Min Distance', 'min-distance', 0)
-        .setTooltip('The minimum distance the player should fall before effects activating.')
+    this.data.push(new DoubleValue('最小距离', 'min-distance', 0)
+        .setTooltip('距离地面的最小距离')
     );
 }
 
@@ -842,132 +842,126 @@ extend('TriggerLaunch', 'Component');
 function TriggerLaunch() {
     this.super('Launch', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player launches a projectile.';
+    this.description = '玩家射击/投掷指定物品时触发技能';
 
-    this.data.push(new ListValue('Type', 'type', ['Any',
-                                                  'Arrow',
-                                                  'Egg',
-                                                  'Ender Pearl',
-                                                  'Fireball',
-                                                  'Fishing Hook',
-                                                  'Snowball'], 'Any')
-        .setTooltip('The type of projectile that should be launched.')
+    this.data.push(new ListValue('类型', 'type', [ 'Any', 'Arrow', 'Egg', 'Ender Pearl', 'Fireball', 'Fishing Hook', 'Snowball' ], 'Any')
+        .setTooltip('分别为 任何东西 弓箭 蛋 末影珍珠 火球 鱼钩 雪球')
     );
 }
 
 extend('TriggerLeftClick', 'Component');
 
 function TriggerLeftClick() {
-    this.super('Left Click', Type.TRIGGER, true);
+    this.super('左键', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon performing a left-click';
+    this.description = '在执行左键单击时触发技能';
 
-    this.data.push(new ListValue('Crouch', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
-        .setTooltip('If the player has to be crouching in order for this trigger to function')
+    this.data.push(new ListValue('下蹲', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
+        .setTooltip('如果玩家必须蹲着才能让这个触发器发挥作用')
     );
 }
 
 extend('TriggerMove', 'Component');
 
 function TriggerMove() {
-    this.super('Move', Type.TRIGGER, true);
+    this.super('移动', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player moves around. This triggers every tick the player is moving, so use this sparingly. Use the "api-moved" value to check/use the distance traveled.';
+    this.description = '当玩家移动时触发技能。这将触发玩家移动的每一个tick，所以要慎用。使用“api moved”值来检查/使用移动的距离';
 }
 
 extend('TriggerPhysicalDamage', 'Component');
 
 function TriggerPhysicalDamage() {
-    this.super('Physical Damage', Type.TRIGGER, true);
+    this.super('物理伤害', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player deals physical (or non-skill) damage. This includes melee attacks and firing a bow.';
+    this.description = '当玩家造成物理伤害(即非技能伤害)时触发.包括近战攻击和火焰伤害';
 
-    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
-        .setTooltip('True makes children target the caster. False makes children target the damaged entity')
+    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
+        .setTooltip('True 使目标指向玩家. False 使目标指向受到伤害的实体')
     );
-    this.data.push(new ListValue('Type', 'type', ['Both', 'Melee', 'Projectile'], 'Both')
-        .setTooltip('The type of damage dealt')
+    this.data.push(new ListValue('类型', 'type', [ 'Both', 'Melee', 'Projectile' ], 'Both')
+        .setTooltip('分别为 两者 近战 远程')
     );
-    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
-        .setTooltip('The minimum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
+        .setTooltip('当造成的伤害大于最小伤害就触发技能')
     );
-    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
-        .setTooltip('The maximum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
+        .setTooltip('当造成的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
     );
 }
 
 extend('TriggerRightClick', 'Component');
 
 function TriggerRightClick() {
-    this.super('Right Click', Type.TRIGGER, true);
+    this.super('右键', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects upon performing a right-click (NOTE: When clicking in air, you have to have an item in your hand)';
+    this.description = '在执行右键时触发技能(注意:在空中点击时，你必须有一个物品在手)';
 
-    this.data.push(new ListValue('Crouch', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
-        .setTooltip('If the player has to be crouching in order for this trigger to function')
+    this.data.push(new ListValue('蹲下', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
+        .setTooltip('如果玩家必须蹲着才能让这个触发器发挥作用')
     );
 }
 
 extend('TriggerSkillDamage', 'Component');
 
 function TriggerSkillDamage() {
-    this.super('Skill Damage', Type.TRIGGER, true);
+    this.super('技能伤害', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player deals damage with a skill.';
+    this.description = '当玩家造成技能伤害时触发';
 
-    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
-        .setTooltip('True makes children target the caster. False makes children target the damaged entity')
+    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
+        .setTooltip('True 使目标指向玩家. False 使目标指向受到伤害的实体')
     );
-    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
-        .setTooltip('The minimum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
+        .setTooltip('当造成的伤害大于最小伤害就触发技能')
     );
-    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
-        .setTooltip('The maximum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
+        .setTooltip('当造成的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
     );
-    this.data.push(new StringListValue('Category', 'category', ['default'])
-        .setTooltip('The type of skill damage to apply for. Leave this empty to apply to all skill damage.')
+    this.data.push(new StringListValue('类型', 'category', [ 'default' ] )
+        .setTooltip('技能伤害的类型,不填以应用于所有技能伤害')
     );
 }
 
 extend('TriggerTookPhysicalDamage', 'Component');
 
 function TriggerTookPhysicalDamage() {
-    this.super('Took Physical Damage', Type.TRIGGER, true);
+    this.super('受到物理伤害', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player takes physical (or non-skill) damage. This includes melee attacks and projectiles not fired by a skill.';
+    this.description = '当玩家受到物理伤害(即非技能伤害)时触发.包括近战攻击和火焰伤害';
 
-    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
-        .setTooltip('True makes children target the caster. False makes children target the attacking entity')
+    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
+        .setTooltip('True 使目标指向玩家. False 使目标指向攻击者')
     );
-    this.data.push(new ListValue('Type', 'type', ['Both', 'Melee', 'Projectile'], 'Both')
-        .setTooltip('The type of damage dealt')
+    this.data.push(new ListValue('类型', 'type', [ 'Both', 'Melee', 'Projectile' ], 'Both')
+        .setTooltip('分别为 两者 近战 远程')
     );
-    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
-        .setTooltip('The minimum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
+        .setTooltip('当受到的伤害大于最小伤害就触发技能')
     );
-    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
-        .setTooltip('The maximum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
+        .setTooltip('当受到的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
     );
 }
 
 extend('TriggerTookSkillDamage', 'Component');
 
 function TriggerTookSkillDamage() {
-    this.super('Took Skill Damage', Type.TRIGGER, true);
+    this.super('受到技能伤害', Type.TRIGGER, true);
 
-    this.description = 'Applies skill effects when a player takes damage from a skill other than their own.';
+    this.description = '当玩家受到技能伤害时触发，包括对自己的伤害';
 
-    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
-        .setTooltip('True makes children target the caster. False makes children target the attacking entity')
+    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
+        .setTooltip('True 使目标指向玩家. False 使目标指向攻击者')
     );
-    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
-        .setTooltip('The minimum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
+        .setTooltip('当受到的伤害大于最小伤害就触发技能')
     );
-    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
-        .setTooltip('The maximum damage that needs to be dealt')
+    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
+        .setTooltip('当受到的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
     );
-    this.data.push(new StringListValue('Category', 'category', ['default'])
-        .setTooltip('The type of skill damage to apply for. Leave this empty to apply to all skill damage.')
+    this.data.push(new StringListValue('类型', 'category', [ 'default' ] )
+        .setTooltip('技能伤害的类型,不填以应用于所有技能伤害')
     );
 }
 
