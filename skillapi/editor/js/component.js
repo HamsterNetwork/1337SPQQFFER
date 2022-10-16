@@ -24,182 +24,181 @@ var Type = {
 /**
  * Available triggers for activating skill effects
  */
-
 var Trigger = {
-    BLOCK_BREAK          : { name: '方块破坏',          container: true, construct: TriggerBlockBreak         },
-    BLOCK_PLACE          : { name: '方块放置',          container: true, construct: TriggerBlockPlace         },
-    CAST                 : { name: '主动释放',                 container: true, construct: TriggerCast               },
-    CLEANUP              : { name: '技能清除',              container: true, construct: TriggerCleanup            },
-    CROUCH               : { name: '下蹲',               container: true, construct: TriggerCrouch             },
-    DEATH                : { name: '死亡',                container: true, construct: TriggerDeath              },
-    DROP_ITEM            : { name: '丢出物品',            container: true, construct: TriggerDropItem           },
-    ENVIRONMENT_DAMAGE   : { name: '环境伤害',   container: true, construct: TriggerEnvironmentDamage  },
-    FISH                 : { name: '钓鱼',              container: true, construct: TriggerFishing            },
-    FISH_BITE            : { name: '鱼咬钩',         container: true, construct: TriggerFishingBite        },
-    FISH_FAIL            : { name: '钓鱼失败',         container: true, construct: TriggerFishingFail        },
-    FISH_GRAB            : { name: '钓鱼成功',         container: true, construct: TriggerFishingGrab        },
-    FISH_GROUND          : { name: '鱼竿砸地',       container: true, construct: TriggerFishingGround      },
-    FISH_REEL            : { name: '收空杆',         container: true, construct: TriggerFishingReel        },
-    INITIALIZE           : { name: '复活',           container: true, construct: TriggerInitialize         },
-    ITEMSWAP             : { name: '物品切换',            container: true, construct: TriggerItemSwap           },
-    KILL                 : { name: '击杀',                 container: true, construct: TriggerKill               },
-    LAND                 : { name: '落地',                 container: true, construct: TriggerLand               },
-    LAUNCH               : { name: '射击',               container: true, construct: TriggerLaunch             },
-    LEFT_CLICK           : { name: '左键',           container: true, construct: TriggerLeftClick          },
-    MOVE                 : { name: '移动',                 container: true, construct: TriggerMove               },
-    PHYSICAL_DAMAGE      : { name: '造成物理伤害',      container: true, construct: TriggerPhysicalDamage     },
-    RIGHT_CLICK          : { name: '右键',          container: true, construct: TriggerRightClick         },
-    SKILL_DAMAGE         : { name: '造成技能伤害',         container: true, construct: TriggerSkillDamage        },
-    TOOK_PHYSICAL_DAMAGE : { name: '受到到物理伤害', container: true, construct: TriggerTookPhysicalDamage },
-    TOOK_SKILL_DAMAGE    : { name: '受到技能伤害',    container: true, construct: TriggerTookSkillDamage    }
+    BLOCK_BREAK          : { name: 'Block Break',          container: true, construct: TriggerBlockBreak         },
+    BLOCK_PLACE          : { name: 'Block Place',          container: true, construct: TriggerBlockPlace         },
+    CAST                 : { name: 'Cast',                 container: true, construct: TriggerCast               },
+    CLEANUP              : { name: 'Cleanup',              container: true, construct: TriggerCleanup            },
+    CROUCH               : { name: 'Crouch',               container: true, construct: TriggerCrouch             },
+    DEATH                : { name: 'Death',                container: true, construct: TriggerDeath              },
+    DROP_ITEM            : { name: 'Drop Item',            container: true, construct: TriggerDropItem           },
+    ENVIRONMENT_DAMAGE   : { name: 'Environment Damage',   container: true, construct: TriggerEnvironmentDamage  },
+    FISH                 : { name: 'Fishing',              container: true, construct: TriggerFishing            },
+    FISH_BITE            : { name: 'Fishing Bite',         container: true, construct: TriggerFishingBite        },
+    FISH_FAIL            : { name: 'Fishing Fail',         container: true, construct: TriggerFishingFail        },
+    FISH_GRAB            : { name: 'Fishing Grab',         container: true, construct: TriggerFishingGrab        },
+    FISH_GROUND          : { name: 'Fishing Ground',       container: true, construct: TriggerFishingGround      },
+    FISH_REEL            : { name: 'Fishing Reel',         container: true, construct: TriggerFishingReel        },
+    INITIALIZE           : { name: 'Initialize',           container: true, construct: TriggerInitialize         },
+    ITEMSWAP             : { name: 'Item Swap',            container: true, construct: TriggerItemSwap           },
+    KILL                 : { name: 'Kill',                 container: true, construct: TriggerKill               },
+    LAND                 : { name: 'Land',                 container: true, construct: TriggerLand               },
+    LAUNCH               : { name: 'Launch',               container: true, construct: TriggerLaunch             },
+    LEFT_CLICK           : { name: 'Left Click',           container: true, construct: TriggerLeftClick          },
+    MOVE                 : { name: 'Move',                 container: true, construct: TriggerMove               },
+    PHYSICAL_DAMAGE      : { name: 'Physical Damage',      container: true, construct: TriggerPhysicalDamage     },
+    RIGHT_CLICK          : { name: 'Right Click',          container: true, construct: TriggerRightClick         },
+    SKILL_DAMAGE         : { name: 'Skill Damage',         container: true, construct: TriggerSkillDamage        },
+    TOOK_PHYSICAL_DAMAGE : { name: 'Took Physical Damage', container: true, construct: TriggerTookPhysicalDamage },
+    TOOK_SKILL_DAMAGE    : { name: 'Took Skill Damage',    container: true, construct: TriggerTookSkillDamage    }
 };
 
 /**
  * Available target component data
  */
 var Target = {
-    AREA     : { name: '范围',     container: true, construct: TargetArea     },
-    CONE     : { name: '圆锥',     container: true, construct: TargetCone     },
-    LINEAR   : { name: '直线',   container: true, construct: TargetLinear   },
-    LOCATION : { name: '坐标', container: true, construct: TargetLocation },
-    NEAREST  : { name: '最近',  container: true, construct: TargetNearest  },
-    OFFSET   : { name: '偏移',   container: true, construct: TargetOffset   },
-    REMEMBER : { name: '记忆', container: true, construct: TargetRemember },
-    SELF     : { name: '自身',     container: true, construct: TargetSelf     },
-    SINGLE   : { name: '单体',   container: true, construct: TargetSingle   }
+    AREA     : { name: 'Area',     container: true, construct: TargetArea     },
+    CONE     : { name: 'Cone',     container: true, construct: TargetCone     },
+    LINEAR   : { name: 'Linear',   container: true, construct: TargetLinear   },
+    LOCATION : { name: 'Location', container: true, construct: TargetLocation },
+    NEAREST  : { name: 'Nearest',  container: true, construct: TargetNearest  },
+    OFFSET   : { name: 'Offset',   container: true, construct: TargetOffset   },
+    REMEMBER : { name: 'Remember', container: true, construct: TargetRemember },
+    SELF     : { name: 'Self',     container: true, construct: TargetSelf     },
+    SINGLE   : { name: 'Single',   container: true, construct: TargetSingle   }
 };
 
 /**
  * Available condition component data
  */
 var Condition = {
-    ALTITUDE       : { name: '高度',       container: true, construct: ConditionAltitude      },
-    ARMOR          : { name: '装备',          container: true, construct: ConditionArmor         },
-    ATTRIBUTE      : { name: '属性',      container: true, construct: ConditionAttribute     },
-    BIOME          : { name: '生物群系',          container: true, construct: ConditionBiome         },
-    BLOCK          : { name: '方块',          container: true, construct: ConditionBlock         },
-    BURNING        : { name: '燃烧',        container: true, construct: ConditionBurning       },
-    CEILING        : { name: '头上空间',        container: true, construct: ConditionCeiling       },
-    CHANCE         : { name: '几率',         container: true, construct: ConditionChance        },
-    CLASS          : { name: '职业',          container: true, construct: ConditionClass         },
-    CLASS_LEVEL    : { name: '职业登记',    container: true, construct: ConditionClassLevel    },
-    COMBAT         : { name: '战斗状态',         container: true, construct: ConditionCombat        },
-    CROUCH         : { name: '下蹲',         container: true, construct: ConditionCrouch        },
-    DIRECTION      : { name: '朝向',      container: true, construct: ConditionDirection     },
-    ELEVATION      : { name: '高度',      container: true, construct: ConditionElevation     },
-    ELSE           : { name: '或',           container: true, construct: ConditionElse          },
-    ENTITY_TYPE    : { name: '实体类型',    container: true, construct: ConditionEntityType    },
-    FIRE           : { name: '火焰',           container: true, construct: ConditionFire          },
-    FLAG           : { name: '标签',           container: true, construct: ConditionFlag          },
-    FOOD           : { name: '食物',           container: true, construct: ConditionFood          },
-    GROUND         : { name: '地面',         container: true, construct: ConditionGround        },
-    HEALTH         : { name: '血量',         container: true, construct: ConditionHealth        },
-    INVENTORY      : { name: '背包物品',      container: true, construct: ConditionInventory     },
-    ITEM           : { name: '手持物品',           container: true, construct: ConditionItem          },
-    LIGHT          : { name: '亮度',          container: true, construct: ConditionLight         },
-    MANA           : { name: '法力值',           container: true, construct: ConditionMana          },
-    MONEY          : { name: '金钱',          container: true, construct: ConditionMoney         },
-    MOUNTED        : { name: '骑在马上',        container: true, construct: ConditionMounted       },
-    MOUNTING       : { name: '上马途中',       container: true, construct: ConditionMounting      },
-    MYTHICMOB_TYPE : { name: '史诗怪物类型', container: true, construct: ConditionMythicMobType },
-    NAME           : { name: '名字',           container: true, construct: ConditionName          },
-    OFFHAND        : { name: '副手',        container: true, construct: ConditionOffhand       },
-    PERMISSION     : { name: '权限',     container: true, construct: ConditionPermission    },
-    POTION         : { name: '药水效果',         container: true, construct: ConditionPotion        },
-    SKILL_LEVEL    : { name: '技能等级',    container: true, construct: ConditionSkillLevel    },
-    SLOT           : { name: '槽位',           container: true, construct: ConditionSlot          },
-    STATUS         : { name: '状态',         container: true, construct: ConditionStatus        },
-    TIME           : { name: '时间',           container: true, construct: ConditionTime          },
-    TOOL           : { name: '工具',           container: true, construct: ConditionTool          },
-    VALUE          : { name: '数值',          container: true, construct: ConditionValue         },
-    WATER          : { name: '水',          container: true, construct: ConditionWater         },
-    WEATHER        : { name: '天气',        container: true, construct: ConditionWeather       },
-    WORLD          : { name: '世界',          container: true, construct: ConditionWorld         }
+    ALTITUDE       : { name: 'Altitude',       container: true, construct: ConditionAltitude      },
+    ARMOR          : { name: 'Armor',          container: true, construct: ConditionArmor         },
+    ATTRIBUTE      : { name: 'Attribute',      container: true, construct: ConditionAttribute     },
+    BIOME          : { name: 'Biome',          container: true, construct: ConditionBiome         },
+    BLOCK          : { name: 'Block',          container: true, construct: ConditionBlock         },
+    BURNING        : { name: 'Burning',        container: true, construct: ConditionBurning       },
+    CEILING        : { name: 'Ceiling',        container: true, construct: ConditionCeiling       },
+    CHANCE         : { name: 'Chance',         container: true, construct: ConditionChance        },
+    CLASS          : { name: 'Class',          container: true, construct: ConditionClass         },
+    CLASS_LEVEL    : { name: 'Class Level',    container: true, construct: ConditionClassLevel    },
+    COMBAT         : { name: 'Combat',         container: true, construct: ConditionCombat        },
+    CROUCH         : { name: 'Crouch',         container: true, construct: ConditionCrouch        },
+    DIRECTION      : { name: 'Direction',      container: true, construct: ConditionDirection     },
+    ELEVATION      : { name: 'Elevation',      container: true, construct: ConditionElevation     },
+    ELSE           : { name: 'Else',           container: true, construct: ConditionElse          },
+    ENTITY_TYPE    : { name: 'Entity Type',    container: true, construct: ConditionEntityType    },
+    FIRE           : { name: 'Fire',           container: true, construct: ConditionFire          },
+    FLAG           : { name: 'Flag',           container: true, construct: ConditionFlag          },
+    FOOD           : { name: 'Food',           container: true, construct: ConditionFood          },
+    GROUND         : { name: 'Ground',         container: true, construct: ConditionGround        },
+    HEALTH         : { name: 'Health',         container: true, construct: ConditionHealth        },
+    INVENTORY      : { name: 'Inventory',      container: true, construct: ConditionInventory     },
+    ITEM           : { name: 'Item',           container: true, construct: ConditionItem          },
+    LIGHT          : { name: 'Light',          container: true, construct: ConditionLight         },
+    MANA           : { name: 'Mana',           container: true, construct: ConditionMana          },
+    MONEY          : { name: 'Money',          container: true, construct: ConditionMoney         },
+    MOUNTED        : { name: 'Mounted',        container: true, construct: ConditionMounted       },
+    MOUNTING       : { name: 'Mounting',       container: true, construct: ConditionMounting      },
+    MYTHICMOB_TYPE : { name: 'MythicMob Type', container: true, construct: ConditionMythicMobType },
+    NAME           : { name: 'Name',           container: true, construct: ConditionName          },
+    OFFHAND        : { name: 'Offhand',        container: true, construct: ConditionOffhand       },
+    PERMISSION     : { name: 'Permission',     container: true, construct: ConditionPermission    },
+    POTION         : { name: 'Potion',         container: true, construct: ConditionPotion        },
+    SKILL_LEVEL    : { name: 'Skill Level',    container: true, construct: ConditionSkillLevel    },
+    SLOT           : { name: 'Slot',           container: true, construct: ConditionSlot          },
+    STATUS         : { name: 'Status',         container: true, construct: ConditionStatus        },
+    TIME           : { name: 'Time',           container: true, construct: ConditionTime          },
+    TOOL           : { name: 'Tool',           container: true, construct: ConditionTool          },
+    VALUE          : { name: 'Value',          container: true, construct: ConditionValue         },
+    WATER          : { name: 'Water',          container: true, construct: ConditionWater         },
+    WEATHER        : { name: 'Weather',        container: true, construct: ConditionWeather       },
+    WORLD          : { name: 'World',          container: true, construct: ConditionWorld         }
 };
 
 /**
  * Available mechanic component data
  */
 var Mechanic = {
-    ARMOR               : { name: '盔甲',               container: false, construct: MechanicArmor              },
-    ARMOR_STAND         : { name: '装甲架',         container: true,  construct: MechanicArmorStand         },
-    ARMOR_STAND_POSE    : { name: '盔甲架姿势',    container: false, construct: MechanicArmorStandPose     },
-    ATTRIBUTE           : { name: '属性加成',           container: false, construct: MechanicAttribute          },
-    BLOCK               : { name: '生成方块',               container: false, construct: MechanicBlock              },
-    BUFF                : { name: '战斗加成',                container: false, construct: MechanicBuff,              premium: true },
-    CANCEL              : { name: '伤害取消',              container: false, construct: MechanicCancel             },
-    CHANNEL             : { name: '吟唱',             container: true,  construct: MechanicChannel            },
-    CLEANSE             : { name: '净化',             container: false, construct: MechanicCleanse            },
-    COMMAND             : { name: '指令',             container: false, construct: MechanicCommand            },
-    COOLDOWN            : { name: '冷却',            container: false, construct: MechanicCooldown           },
-    DAMAGE              : { name: '造成伤害',              container: false, construct: MechanicDamage             },
-    DAMAGE_BUFF         : { name: '伤害加成',         container: false, construct: MechanicDamageBuff         },
-    DAMAGE_LORE         : { name: 'Lore伤害',         container: false, construct: MechanicDamageLore         },
-    DEFENSE_BUFF        : { name: '伤害减免',        container: false, construct: MechanicDefenseBuff        },
-    DELAY               : { name: '延迟',               container: true,  construct: MechanicDelay              },
-    DISGUISE            : { name: '伪装',            container: false, construct: MechanicDisguise           },
-    DURABILITY          : { name: '耐久度',          container: false, construct: MechanicDurability         },
-    EXPLOSION           : { name: '爆炸',           container: false, construct: MechanicExplosion          },
-    FIRE                : { name: '火焰',                container: false, construct: MechanicFire               },
-    FLAG                : { name: '标签',                container: false, construct: MechanicFlag               },
-    FLAG_CLEAR          : { name: '标签清除',          container: false, construct: MechanicFlagClear          },
-    FLAG_TOGGLE         : { name: '标签切换',         container: false, construct: MechanicFlagToggle         },
-    FOOD                : { name: '饱食度',                container: false, construct: MechanicFood               },
-    FORGET_TARGETS      : { name: '忘记目标',      container: false, construct: MechanicForgetTargets      },
-    HEAL                : { name: '治疗',                container: false, construct: MechanicHeal               },
-    HEALTH_SET          : { name: '生命值设置',          container: false, construct: MechanicHealthSet          },
-    HELD_ITEM           : { name: '移动手持物品',           container: false, construct: MechanicHeldItem           },
-    IMMUNITY            : { name: '伤害免疫',            container: false, construct: MechanicImmunity           },
-    INTERRUPT           : { name: '中断',           container: false, construct: MechanicInterrupt          },
-    ITEM                : { name: '物品',                container: false, construct: MechanicItem               },
-    ITEM_DROP           : { name: '丢出物品',           container: false, construct: MechanicItemDrop           },
-    ITEM_PROJECTILE     : { name: '物品弹射',     container: true,  construct: MechanicItemProjectile     },
-    ITEM_REMOVE         : { name: '物品删除',         container: false, construct: MechanicItemRemove         },
-    LAUNCH              : { name: '冲刺',              container: false, construct: MechanicLaunch             },
-    LIGHTNING           : { name: '闪电',           container: true,  construct: MechanicLightning          },
-    MANA                : { name: '法力值',                container: false, construct: MechanicMana               },
-    MESSAGE             : { name: '聊天信息',             container: false, construct: MechanicMessage            },
-    MINE                : { name: '挖矿',                container: false, construct: MechanicMine               },
-    MONEY               : { name: '金钱',               container: false, construct: MechanicMoney              },
-    PARTICLE            : { name: '粒子',            container: false, construct: MechanicParticle           },
-    PARTICLE_ANIMATION  : { name: '粒子动画',  container: false, construct: MechanicParticleAnimation  },
-    PARTICLE_EFFECT     : { name: '粒子效果',     container: false, construct: MechanicParticleEffect     },
-    CANCEL_EFFECT       : { name: '效果取消',       container: false, construct: MechanicCancelEffect       },
-    PARTICLE_PROJECTILE : { name: '粒子弹射', container: true,  construct: MechanicParticleProjectile },
-    PASSIVE             : { name: '被动',             container: true,  construct: MechanicPassive            },
-    PERMISSION          : { name: '权限',          container: false, construct: MechanicPermission         },
-    POTION              : { name: '药水',              container: false, construct: MechanicPotion             },
-    POTION_PROJECTILE   : { name: '药水投掷',   container: true,  construct: MechanicPotionProjectile   },
-    PROJECTILE          : { name: '弹射',          container: true,  construct: MechanicProjectile         },
-    PURGE               : { name: '清除',               container: false, construct: MechanicPurge              },
-    PUSH                : { name: '击退',                container: false, construct: MechanicPush               },
-    REMEMBER_TARGETS    : { name: '记住目标',    container: false, construct: MechanicRememberTargets    },
-    REPEAT              : { name: '重复',              container: true,  construct: MechanicRepeat             },
-    SOUND               : { name: '声音',               container: false, construct: MechanicSound              },
-    Stat                : { name: '统计',                container: false, construct: MechanicStat               },
-    STATUS              : { name: '状态',              container: false, construct: MechanicStatus             },
-    TAUNT               : { name: '嘲讽',               container: false, construct: MechanicTaunt              },
-    TRIGGER             : { name: '状态检测',             container: true,  construct: MechanicTrigger            },
-    VALUE_ADD           : { name: '添加存储值',           container: false, construct: MechanicValueAdd           },
-    VALUE_ATTRIBUTE     : { name: '属性存储值',     container: false, construct: MechanicValueAttribute     },
-    VALUE_COPY          : { name: '存储值复制',          container: false, construct: MechanicValueCopy          },
-    VALUE_DISTANCE      : { name: '距离存储值',      container: false, construct: MechanicValueDistance      },
-    VALUE_HEALTH        : { name: '生命存储值',        container: false, construct: MechanicValueHealth        },
-    VALUE_LOCATION      : { name: '位置存储值',      container: false, construct: MechanicValueLocation      },
-    VALUE_LORE          : { name: 'Lore存储值',          container: false, construct: MechanicValueLore          },
-    VALUE_LORE_SLOT     : { name: 'Lore槽位存储值',     container: false, construct: MechanicValueLoreSlot      },
-    VALUE_MANA          : { name: '魔力存储值',          container: false, construct: MechanicValueMana          },
-    VALUE_MULTIPLY      : { name: '倍数存储值',      container: false, construct: MechanicValueMultiply      },
-    VALUE_PLACEHOLDER   : { name: '变量存储值',   container: false, construct: MechanicValuePlaceholder   },
-    VALUE_RANDOM        : { name: '随机存储值',        container: false, construct: MechanicValueRandom        },
-    VALUE_SET           : { name: '存储值',           container: false, construct: MechanicValueSet           },
-    WARP                : { name: '传送',                container: false, construct: MechanicWarp               },
-    WARP_LOC            : { name: '坐标传送',       container: false, construct: MechanicWarpLoc            },
-    WARP_RANDOM         : { name: '随机传送',         container: false, construct: MechanicWarpRandom         },
-    WARP_SWAP           : { name: '相互传送',           container: false, construct: MechanicWarpSwap           },
-    WARP_TARGET         : { name: '传送目标',         container: false, construct: MechanicWarpTarget         },
-    WARP_VALUE          : { name: '存储值传送',          container: false, construct: MechanicWarpValue          },
-    WOLF                : { name: '狼',                container: true,  construct: MechanicWolf               }
+    ARMOR               : { name: 'Armor',               container: false, construct: MechanicArmor              },
+    ARMOR_STAND         : { name: 'Armor Stand',         container: true,  construct: MechanicArmorStand         },
+    ARMOR_STAND_POSE    : { name: 'Armor Stand Pose',    container: false, construct: MechanicArmorStandPose     },
+    ATTRIBUTE           : { name: 'Attribute',           container: false, construct: MechanicAttribute          },
+    BLOCK               : { name: 'Block',               container: false, construct: MechanicBlock              },
+    BUFF                : { name: 'Buff',                container: false, construct: MechanicBuff               },
+    CANCEL              : { name: 'Cancel',              container: false, construct: MechanicCancel             },
+    CHANNEL             : { name: 'Channel',             container: true,  construct: MechanicChannel            },
+    CLEANSE             : { name: 'Cleanse',             container: false, construct: MechanicCleanse            },
+    COMMAND             : { name: 'Command',             container: false, construct: MechanicCommand            },
+    COOLDOWN            : { name: 'Cooldown',            container: false, construct: MechanicCooldown           },
+    DAMAGE              : { name: 'Damage',              container: false, construct: MechanicDamage             },
+    DAMAGE_BUFF         : { name: 'Damage Buff',         container: false, construct: MechanicDamageBuff         },
+    DAMAGE_LORE         : { name: 'Damage Lore',         container: false, construct: MechanicDamageLore         },
+    DEFENSE_BUFF        : { name: 'Defense Buff',        container: false, construct: MechanicDefenseBuff        },
+    DELAY               : { name: 'Delay',               container: true,  construct: MechanicDelay              },
+    DISGUISE            : { name: 'Disguise',            container: false, construct: MechanicDisguise           },
+    DURABILITY          : { name: 'Durability',          container: false, construct: MechanicDurability         },
+    EXPLOSION           : { name: 'Explosion',           container: false, construct: MechanicExplosion          },
+    FIRE                : { name: 'Fire',                container: false, construct: MechanicFire               },
+    FLAG                : { name: 'Flag',                container: false, construct: MechanicFlag               },
+    FLAG_CLEAR          : { name: 'Flag Clear',          container: false, construct: MechanicFlagClear          },
+    FLAG_TOGGLE         : { name: 'Flag Toggle',         container: false, construct: MechanicFlagToggle         },
+    FOOD                : { name: 'Food',                container: false, construct: MechanicFood               },
+    FORGET_TARGETS      : { name: 'Forget Targets',      container: false, construct: MechanicForgetTargets      },
+    HEAL                : { name: 'Heal',                container: false, construct: MechanicHeal               },
+    HEALTH_SET          : { name: 'Health Set',          container: false, construct: MechanicHealthSet          },
+    HELD_ITEM           : { name: 'Held Item',           container: false, construct: MechanicHeldItem           },
+    IMMUNITY            : { name: 'Immunity',            container: false, construct: MechanicImmunity           },
+    INTERRUPT           : { name: 'Interrupt',           container: false, construct: MechanicInterrupt          },
+    ITEM                : { name: 'Item',                container: false, construct: MechanicItem               },
+    ITEM_DROP           : { name: 'Item Drop',           container: false, construct: MechanicItemDrop           },
+    ITEM_PROJECTILE     : { name: 'Item Projectile',     container: true,  construct: MechanicItemProjectile     },
+    ITEM_REMOVE         : { name: 'Item Remove',         container: false, construct: MechanicItemRemove         },
+    LAUNCH              : { name: 'Launch',              container: false, construct: MechanicLaunch             },
+    LIGHTNING           : { name: 'Lightning',           container: true,  construct: MechanicLightning          },
+    MANA                : { name: 'Mana',                container: false, construct: MechanicMana               },
+    MESSAGE             : { name: 'Message',             container: false, construct: MechanicMessage            },
+    MINE                : { name: 'Mine',                container: false, construct: MechanicMine               },
+    MONEY               : { name: 'Money',               container: false, construct: MechanicMoney              },
+    PARTICLE            : { name: 'Particle',            container: false, construct: MechanicParticle           },
+    PARTICLE_ANIMATION  : { name: 'Particle Animation',  container: false, construct: MechanicParticleAnimation  },
+    PARTICLE_EFFECT     : { name: 'Particle Effect',     container: false, construct: MechanicParticleEffect     },
+    CANCEL_EFFECT       : { name: 'Cancel Effect',       container: false, construct: MechanicCancelEffect       },
+    PARTICLE_PROJECTILE : { name: 'Particle Projectile', container: true,  construct: MechanicParticleProjectile },
+    PASSIVE             : { name: 'Passive',             container: true,  construct: MechanicPassive            },
+    PERMISSION          : { name: 'Permission',          container: false, construct: MechanicPermission         },
+    POTION              : { name: 'Potion',              container: false, construct: MechanicPotion             },
+    POTION_PROJECTILE   : { name: 'Potion Projectile',   container: true,  construct: MechanicPotionProjectile   },
+    PROJECTILE          : { name: 'Projectile',          container: true,  construct: MechanicProjectile         },
+    PURGE               : { name: 'Purge',               container: false, construct: MechanicPurge              },
+    PUSH                : { name: 'Push',                container: false, construct: MechanicPush               },
+    REMEMBER_TARGETS    : { name: 'Remember Targets',    container: false, construct: MechanicRememberTargets    },
+    REPEAT              : { name: 'Repeat',              container: true,  construct: MechanicRepeat             },
+    SOUND               : { name: 'Sound',               container: false, construct: MechanicSound              },
+    Stat                : { name: 'Stat',                container: false, construct: MechanicStat               },
+    STATUS              : { name: 'Status',              container: false, construct: MechanicStatus             },
+    TAUNT               : { name: 'Taunt',               container: false, construct: MechanicTaunt              },
+    TRIGGER             : { name: 'Trigger',             container: true,  construct: MechanicTrigger            },
+    VALUE_ADD           : { name: 'Value Add',           container: false, construct: MechanicValueAdd           },
+    VALUE_ATTRIBUTE     : { name: 'Value Attribute',     container: false, construct: MechanicValueAttribute     },
+    VALUE_COPY          : { name: 'Value Copy',          container: false, construct: MechanicValueCopy          },
+    VALUE_DISTANCE      : { name: 'Value Distance',      container: false, construct: MechanicValueDistance      },
+    VALUE_HEALTH        : { name: 'Value Health',        container: false, construct: MechanicValueHealth        },
+    VALUE_LOCATION      : { name: 'Value Location',      container: false, construct: MechanicValueLocation      },
+    VALUE_LORE          : { name: 'Value Lore',          container: false, construct: MechanicValueLore          },
+    VALUE_LORE_SLOT     : { name: 'Value Lore Slot',     container: false, construct: MechanicValueLoreSlot      },
+    VALUE_MANA          : { name: 'Value Mana',          container: false, construct: MechanicValueMana          },
+    VALUE_MULTIPLY      : { name: 'Value Multiply',      container: false, construct: MechanicValueMultiply      },
+    VALUE_PLACEHOLDER   : { name: 'Value Placeholder',   container: false, construct: MechanicValuePlaceholder   },
+    VALUE_RANDOM        : { name: 'Value Random',        container: false, construct: MechanicValueRandom        },
+    VALUE_SET           : { name: 'Value Set',           container: false, construct: MechanicValueSet           },
+    WARP                : { name: 'Warp',                container: false, construct: MechanicWarp               },
+    WARP_LOC            : { name: 'Warp Location',       container: false, construct: MechanicWarpLoc            },
+    WARP_RANDOM         : { name: 'Warp Random',         container: false, construct: MechanicWarpRandom         },
+    WARP_SWAP           : { name: 'Warp Swap',           container: false, construct: MechanicWarpSwap           },
+    WARP_TARGET         : { name: 'Warp Target',         container: false, construct: MechanicWarpTarget         },
+    WARP_VALUE          : { name: 'Warp Value',          container: false, construct: MechanicWarpValue          },
+    WOLF                : { name: 'Wolf',                container: true,  construct: MechanicWolf               }
 };
 
 var saveIndex;
@@ -221,19 +220,17 @@ function Component(name, type, container, parent) {
     this.parent     = parent;
     this.html       = undefined;
     this.components = [];
-    this.data = [new StringValue('数值变量', 'icon-key', '').setTooltip('在技能图标Lore中添加上"{attr:"该行的内容"."注释里中括号内的英文"},显示为被注释目标的值.例如：先请移步至“范围”，在该栏填上“example”,则{attr:example.radius}=半径数值')];
+    this.data       = [new StringValue('Icon Key', 'icon-key', '').setTooltip('The key used by the component in the Icon Lore. If this is set to "example" and has a value name of "value", it can be referenced using the string "{attr:example.value}".')];
     if (this.type == Type.MECHANIC) {
-        this.data.push(new ListValue('释放类型', 'counts', [ 'True', 'False' ], 'True')
-            .setTooltip('True为技能释放成功时的效果,会消耗法力并开始冷却,False为技能释放失败时的效果,该项可用于技能释放失败的惩罚')
+        this.data.push(new ListValue('Counts as Cast', 'counts', ['True', 'False'], 'True')
+            .setTooltip('Whether this mechanic running treats the skill as "casted" and will consume mana and start the cooldown. Set to false if it is a mechanic appled when the skill fails such as cleanup or an error message.')
         );
-    }
-    else if (this.type == Type.TRIGGER && name != 'Cast' && name != 'Initialize' && name != 'Cleanup')
-    {
-        this.data.push(new ListValue('需要法力值', 'mana', [ 'True', 'False' ], 'False')
-            .setTooltip('触发该条件是否需要消耗法力值 False为不需要')
+    } else if (this.type == Type.TRIGGER && name != 'Cast' && name != 'Initialize' && name != 'Cleanup') {
+        this.data.push(new ListValue('Mana', 'mana', ['True', 'False'], 'False')
+            .setTooltip('Whether this trigger requires the mana cost to activate')
         );
-        this.data.push(new ListValue('冷却时间归零激活', 'cooldown', [ 'True', 'False' ], 'False')
-            .setTooltip('触发该条件是否需要等冷却时间归零')
+        this.data.push(new ListValue('Cooldown', 'cooldown', ['True', 'False'], 'False')
+            .setTooltip('Whether this trigger requires to be off cooldown to activate')
         );
     }
 
@@ -282,7 +279,7 @@ Component.prototype.createBuilderHTML = function (target) {
 
     // Component label
     let label       = document.createElement('h3');
-    label.title     = '编辑 ' + this.name + ' 信息';
+    label.title     = 'Edit ' + this.name + ' options';
     label.className = this.type + 'Label';
     label.innerHTML = this.name;
     label.component = this;
@@ -296,7 +293,7 @@ Component.prototype.createBuilderHTML = function (target) {
     if (this.container) {
         let add       = document.createElement('div');
         add.className = 'builderButton';
-        add.innerHTML = '+ 添加子类';
+        add.innerHTML = '+ Add Child';
         add.component = this;
         add.addEventListener('click', function (e) {
             activeComponent = this.component;
@@ -305,7 +302,7 @@ Component.prototype.createBuilderHTML = function (target) {
         div.appendChild(add);
 
         let vision              = document.createElement('div');
-        vision.title            = '隐藏子类';
+        vision.title            = 'Hide Children';
         vision.className        = 'builderButton smallButton';
         vision.style.background = 'url("editor/img/eye.png") no-repeat center #222';
         vision.component        = this;
@@ -328,7 +325,7 @@ Component.prototype.createBuilderHTML = function (target) {
     if (this.type != Type.TRIGGER) {
         let duplicate              = document.createElement('div');
         duplicate.className        = 'builderButton smallButton';
-        duplicate.title            = '复制';
+        duplicate.title            = 'Duplicate';
         duplicate.style.background = 'url("editor/img/duplicate.png") no-repeat center #222';
         duplicate.component        = this;
         duplicate.addEventListener('click', function (e) {
@@ -342,7 +339,7 @@ Component.prototype.createBuilderHTML = function (target) {
 
     // Add the remove button
     let remove              = document.createElement('div');
-    remove.title            = '删除';
+    remove.title            = 'Remove';
     remove.className        = 'builderButton smallButton cancelButton';
     remove.style.background = 'url("editor/img/delete.png") no-repeat center #f00';
     remove.component        = this;
@@ -478,7 +475,7 @@ Component.prototype.createFormHTML = function () {
 
     let done       = document.createElement('h5');
     done.className = 'doneButton';
-    done.innerHTML = '确定';
+    done.innerHTML = 'Done';
     done.component = this;
     done.addEventListener('click', function (e) {
         this.component.update();
@@ -592,269 +589,309 @@ function CustomComponent(data) {
 extend('TriggerBlockBreak', 'Component');
 
 function TriggerBlockBreak() {
-    this.super('方块破坏', Type.TRIGGER, true);
-    this.description = '当玩家破坏指定信息的方块时触发';
+    this.super('Block Break', Type.TRIGGER, true);
+    this.description = 'Applies skill effects when a player breaks a block matching  the given details';
 
-    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
-        .setTooltip('预期被破坏的方块的类型')
+    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
+        .setTooltip('The type of block expected to be broken')
     );
-    this.data.push(new IntValue('数量', 'data', -1)
-        .setTooltip('需要破坏的方块数量(-1为破坏多少都可以)')
+    this.data.push(new IntValue('Data', 'data', -1)
+        .setTooltip('The expected data value of the block (-1 for any data value)')
     );
 }
 
 extend('TriggerBlockPlace', 'Component');
 
 function TriggerBlockPlace() {
-    this.super('方块放置', Type.TRIGGER, true);
-    this.description = '当玩家放置指定信息的方块时触发';
+    this.super('Block Place', Type.TRIGGER, true);
+    this.description = 'Applies skill effects when a player places a block matching  the given details';
 
-    this.data.push(new MultiListValue('方块类型', 'material', getAnyMaterials, [ 'Any' ])
-        .setTooltip('预期被放置的方块的类型')
+    this.data.push(new MultiListValue('Material', 'material', getAnyMaterials, ['Any'])
+        .setTooltip('The type of block expected to be placed')
     );
-    this.data.push(new IntValue('数量', 'data', -1)
-        .setTooltip('需要放置的方块数量(-1为放置多少都可以)')
+    this.data.push(new IntValue('Data', 'data', -1)
+        .setTooltip('The expected data value of the block (-1 for any data value)')
     );
 }
 
 extend('TriggerCast', 'Component');
 
-function TriggerCast()
-{
-    this.super('主动释放', Type.TRIGGER, true);
+function TriggerCast() {
+    this.super('Cast', Type.TRIGGER, true);
 
-    this.description = '使用技能栏/组合键/指令来触发技能';
+    this.description = 'Applies skill effects when a player casts the skill using either the cast command, the skill bar, or click combos.';
 }
 
 extend('TriggerCleanup', 'Component');
 
 function TriggerCleanup() {
-    this.super('技能清除', Type.TRIGGER, true);
+    this.super('Cleanup', Type.TRIGGER, true);
 
-    this.description = '当玩家遗忘或删除技能时触发,通常用于限定技';
+    this.description = 'Applies skill effects when the player disconnects or unlearns the skill. This is always applied with a skill level of 1 just for the sake of math.';
 }
 
 extend('TriggerCrouch', 'Component');
-function TriggerCrouch()
-{
-    this.super('下蹲', Type.TRIGGER, true);
 
-    this.description = '当玩家按下或松开下蹲键(shift)触发技能';
+function TriggerCrouch() {
+    this.super('Crouch', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('类型', 'type', [ 'Start Crouching', 'Stop Crouching', 'Both' ], 'Start Crouching')
-        .setTooltip('分别为 按下/松开/两者')
+    this.description = 'Applies skill effects when a player starts or stops crouching using the shift key.';
+
+    this.data.push(new ListValue('Type', 'type', ['Start Crouching', 'Stop Crouching', 'Both'], 'Start Crouching')
+        .setTooltip('Whether you want to apply components when crouching or not crouching')
     );
 }
 
 extend('TriggerDeath', 'Component');
-function TriggerDeath()
-{
-    this.super('死亡', Type.TRIGGER, true);
 
-    this.description = '玩家死亡时触发技能';
+function TriggerDeath() {
+    this.super('Death', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects when a player dies.';
+}
+
+extend('TriggerDropItem', 'Component');
+
+function TriggerDropItem() {
+    this.super('Drop Item', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects upon dropping an item';
+
+    this.data.push(new ListValue('Drop multiple', 'drop multiple', ['True', 'False', 'Ignore'], 'Ignore')
+        .setTooltip('Whether the player has to drop multiple items or a single item')
+    );
 }
 
 extend('TriggerEnvironmentDamage', 'Component');
-function TriggerEnvironmentDamage()
-{
-    this.super('环境伤害', Type.TRIGGER, true);
 
-    this.description = '当玩家受到指定种类的环境伤害时触发技能';
+function TriggerEnvironmentDamage() {
+    this.super('Environment Damage', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('种类', 'type', DAMAGE_TYPES, 'FALL')
-        .setTooltip('伤害的种类')
+    this.description = 'Applies skill effects when a player takes environmental damage.';
+
+    this.data.push(new ListValue('Type', 'type', getDamageTypes, 'FALL')
+        .setTooltip('The source of damage to apply for')
     );
 }
 
 extend('TriggerFishing', 'Component');
 
 function TriggerFishing() {
-    this.super('钓鱼', Type.TRIGGER, true);
+    this.super('Fishing', Type.TRIGGER, true);
 
-    this.description = '使用钓鱼竿右键单击时应用技能效果';
+    this.description = 'Applies skill effects upon right-clicking with a fishing rod';
 }
 
 extend('TriggerFishingBite', 'Component');
 
 function TriggerFishingBite() {
-    this.super('鱼咬钩', Type.TRIGGER, true);
+    this.super('Fishing Bite', Type.TRIGGER, true);
 
-    this.description = '当鱼咬住玩家的鱼竿时应用技能效果';
+    this.description = 'Applies skill efects when a fish bites the fishing rod of a player';
 }
 
 extend('TriggerFishingFail', 'Component');
 
 function TriggerFishingFail() {
-    this.super('钓鱼失败', Type.TRIGGER, true);
+    this.super('Fishing Fail', Type.TRIGGER, true);
 
-    this.description = '当玩家因时机不佳而无法捕获鱼时，应用技能效果';
+    this.description = 'Applies skill effects when a player fails to catch a fish due to poor timing.';
 }
 
 extend('TriggerFishingGrab', 'Component');
 
 function TriggerFishingGrab() {
-    this.super('钓鱼成功', Type.TRIGGER, true);
+    this.super('Fishing Grab', Type.TRIGGER, true);
 
-    this.description = '在玩家钓到鱼时应用技能效果';
+    this.description = 'Applies skill effects when a player catches a fish';
 }
 
 extend('TriggerFishingGround', 'Component');
 
 function TriggerFishingGround() {
-    this.super('鱼竿砸地', Type.TRIGGER, true);
+    this.super('Fishing Ground', Type.TRIGGER, true);
 
-    this.description = '当鱼竿的鱼竿撞击地面时应用技能效果';
+    this.description = 'Applies skill effects when the bobber of a fishing rod hits the ground';
 }
 
 extend('TriggerFishingReel', 'Component');
 
 function TriggerFishingReel() {
-    this.super('收空杆', Type.TRIGGER, true);
+    this.super('Fishing Reel', Type.TRIGGER, true);
 
-    this.description = '当玩家将鱼竿卷入水中或空中而鱼竿上没有鱼时，应用技能效果。';
+    this.description = 'Applies skill effects when a player reels in a fishing rod out of water or air with no fish on the rod.';
 }
 
 extend('TriggerInitialize', 'Component');
-function TriggerInitialize()
-{
-    this.super('复活', Type.TRIGGER, true);
 
-    this.description = '玩家复活时触发技能,可以用来做被动技能';
+function TriggerInitialize() {
+    this.super('Initialize', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects immediately. This can be used for passive abilities.';
+}
+
+extend('TriggerItemSwap', 'Component');
+
+function TriggerItemSwap() {
+    this.super('Item Swap', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects upon pressing the swap-key on your keyboard.';
+
+    this.data.push(new ListValue('Cancel swap', 'cancel', ['True', 'False'], 'True')
+        .setTooltip('True cancels the item swap. False allows the item swap'));
 }
 
 extend('TriggerKill', 'Component');
-function TriggerKill()
-{
-    this.super('击杀', Type.TRIGGER, true);
 
-    this.description = '击杀实体时触发技能';
+function TriggerKill() {
+    this.super('Kill', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects upon killing something';
 }
 
 extend('TriggerLand', 'Component');
-function TriggerLand()
-{
-    this.super('落地', Type.TRIGGER, true);
 
-    this.description = '玩家落地时触发技能';
+function TriggerLand() {
+    this.super('Land', Type.TRIGGER, true);
 
-    this.data.push(new DoubleValue('最小距离', 'min-distance', 0)
-        .setTooltip('距离地面的最小距离')
+    this.description = 'Applies skill effects when a player lands on the ground.';
+
+    this.data.push(new DoubleValue('Min Distance', 'min-distance', 0)
+        .setTooltip('The minimum distance the player should fall before effects activating.')
     );
 }
 
 extend('TriggerLaunch', 'Component');
 
 function TriggerLaunch() {
-    this.super('射击', Type.TRIGGER, true);
+    this.super('Launch', Type.TRIGGER, true);
 
-    this.description = '玩家射击/投掷指定物品时触发技能';
+    this.description = 'Applies skill effects when a player launches a projectile.';
 
-    this.data.push(new ListValue('类型', 'type', [ 'Any', 'Arrow', 'Egg', 'Ender Pearl', 'Fireball', 'Fishing Hook', 'Snowball' ], 'Any')
-        .setTooltip('分别为 任何东西 弓箭 蛋 暗影珍珠 火球 鱼钩 雪球')
+    this.data.push(new ListValue('Type', 'type', ['Any',
+                                                  'Arrow',
+                                                  'Egg',
+                                                  'Ender Pearl',
+                                                  'Fireball',
+                                                  'Fishing Hook',
+                                                  'Snowball'], 'Any')
+        .setTooltip('The type of projectile that should be launched.')
     );
 }
 
 extend('TriggerLeftClick', 'Component');
 
 function TriggerLeftClick() {
-    this.super('左键', Type.TRIGGER, true);
+    this.super('Left Click', Type.TRIGGER, true);
 
-    this.description = '在执行左键单击时应用技能效果';
+    this.description = 'Applies skill effects upon performing a left-click';
 
-    this.data.push(new ListValue('蹲下', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
-        .setTooltip('如果玩家必须蹲下才能使此触发器正常工作')
+    this.data.push(new ListValue('Crouch', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
+        .setTooltip('If the player has to be crouching in order for this trigger to function')
     );
 }
 
 extend('TriggerMove', 'Component');
-function TriggerMove()
-{
-    this.super('移动', Type.TRIGGER, true);
 
-    this.description = '玩家移动时发动.这会占用大量资源,尽量少用.使用 "api-moved" 去查看/调用移动距离';
+function TriggerMove() {
+    this.super('Move', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects when a player moves around. This triggers every tick the player is moving, so use this sparingly. Use the "api-moved" value to check/use the distance traveled.';
 }
 
 extend('TriggerPhysicalDamage', 'Component');
-function TriggerPhysicalDamage()
-{
-    this.super('造成物理伤害', Type.TRIGGER, true);
 
-    this.description = '当玩家造成物理伤害(即非技能伤害)时触发.包括近战攻击和火焰伤害';
+function TriggerPhysicalDamage() {
+    this.super('Physical Damage', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
-        .setTooltip('True 使目标指向玩家. False 使目标指向受到伤害的实体')
+    this.description = 'Applies skill effects when a player deals physical (or non-skill) damage. This includes melee attacks and firing a bow.';
+
+    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
+        .setTooltip('True makes children target the caster. False makes children target the damaged entity')
     );
-    this.data.push(new ListValue('类型', 'type', [ 'Both', 'Melee', 'Projectile' ], 'Both')
-        .setTooltip('分别为 两者 近战 远程')
+    this.data.push(new ListValue('Type', 'type', ['Both', 'Melee', 'Projectile'], 'Both')
+        .setTooltip('The type of damage dealt')
     );
-    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
-        .setTooltip('当造成的伤害大于最小伤害就触发技能')
+    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
+        .setTooltip('The minimum damage that needs to be dealt')
     );
-    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
-        .setTooltip('当造成的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
+    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
+        .setTooltip('The maximum damage that needs to be dealt')
+    );
+}
+
+extend('TriggerRightClick', 'Component');
+
+function TriggerRightClick() {
+    this.super('Right Click', Type.TRIGGER, true);
+
+    this.description = 'Applies skill effects upon performing a right-click (NOTE: When clicking in air, you have to have an item in your hand)';
+
+    this.data.push(new ListValue('Crouch', 'crouch', ['Crouch', 'Dont crouch', 'Both'], 'Crouch')
+        .setTooltip('If the player has to be crouching in order for this trigger to function')
     );
 }
 
 extend('TriggerSkillDamage', 'Component');
-function TriggerSkillDamage()
-{
-    this.super('造成技能伤害', Type.TRIGGER, true);
 
-    this.description = '当玩家造成技能伤害时触发';
+function TriggerSkillDamage() {
+    this.super('Skill Damage', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
-        .setTooltip('True 使目标指向玩家. False 使目标指向受到伤害的实体')
+    this.description = 'Applies skill effects when a player deals damage with a skill.';
+
+    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
+        .setTooltip('True makes children target the caster. False makes children target the damaged entity')
     );
-    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
-        .setTooltip('当造成的伤害大于最小伤害就触发技能')
+    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
+        .setTooltip('The minimum damage that needs to be dealt')
     );
-    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
-        .setTooltip('当造成的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
+    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
+        .setTooltip('The maximum damage that needs to be dealt')
     );
-    this.data.push(new StringListValue('类型', 'category', [ 'default' ] )
-        .setTooltip('技能伤害的类型,不填以应用于所有技能伤害')
+    this.data.push(new StringListValue('Category', 'category', ['default'])
+        .setTooltip('The type of skill damage to apply for. Leave this empty to apply to all skill damage.')
     );
 }
 
 extend('TriggerTookPhysicalDamage', 'Component');
-function TriggerTookPhysicalDamage()
-{
-    this.super('收到物理伤害', Type.TRIGGER, true);
 
-    this.description = '当玩家受到物理伤害(即非技能伤害)时触发.包括近战攻击和火焰伤害';
+function TriggerTookPhysicalDamage() {
+    this.super('Took Physical Damage', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
-        .setTooltip('True 使目标指向玩家. False 使目标指向攻击者')
+    this.description = 'Applies skill effects when a player takes physical (or non-skill) damage. This includes melee attacks and projectiles not fired by a skill.';
+
+    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
+        .setTooltip('True makes children target the caster. False makes children target the attacking entity')
     );
-    this.data.push(new ListValue('类型', 'type', [ 'Both', 'Melee', 'Projectile' ], 'Both')
-        .setTooltip('分别为 两者 近战 远程')
+    this.data.push(new ListValue('Type', 'type', ['Both', 'Melee', 'Projectile'], 'Both')
+        .setTooltip('The type of damage dealt')
     );
-    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
-        .setTooltip('当受到的伤害大于最小伤害就触发技能')
+    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
+        .setTooltip('The minimum damage that needs to be dealt')
     );
-    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
-        .setTooltip('当受到的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
+    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
+        .setTooltip('The maximum damage that needs to be dealt')
     );
 }
 
 extend('TriggerTookSkillDamage', 'Component');
-function TriggerTookSkillDamage()
-{
-    this.super('收到技能伤害', Type.TRIGGER, true);
 
-    this.description = '当玩家受到技能伤害时触发，包括对自己的伤害';
+function TriggerTookSkillDamage() {
+    this.super('Took Skill Damage', Type.TRIGGER, true);
 
-    this.data.push(new ListValue('目标指向', 'target', [ 'True', 'False' ], 'True')
-        .setTooltip('True 使目标指向玩家. False 使目标指向攻击者')
+    this.description = 'Applies skill effects when a player takes damage from a skill other than their own.';
+
+    this.data.push(new ListValue('Target Caster', 'target', ['True', 'False'], 'True')
+        .setTooltip('True makes children target the caster. False makes children target the attacking entity')
     );
-    this.data.push(new DoubleValue("最小伤害", "dmg-min", 0)
-        .setTooltip('当受到的伤害大于最小伤害就触发技能')
+    this.data.push(new DoubleValue("Min Damage", "dmg-min", 0)
+        .setTooltip('The minimum damage that needs to be dealt')
     );
-    this.data.push(new DoubleValue("最大伤害", "dmg-max", 999)
-        .setTooltip('当受到的伤害大于最大伤害就取消技能,两者配合以确定一个伤害区间')
+    this.data.push(new DoubleValue("Max Damage", "dmg-max", 999)
+        .setTooltip('The maximum damage that needs to be dealt')
     );
-    this.data.push(new StringListValue('类型', 'category', [ 'default' ] )
-        .setTooltip('技能伤害的类型,不填以应用于所有技能伤害')
+    this.data.push(new StringListValue('Category', 'category', ['default'])
+        .setTooltip('The type of skill damage to apply for. Leave this empty to apply to all skill damage.')
     );
 }
 
@@ -863,31 +900,31 @@ function TriggerTookSkillDamage()
 extend('TargetArea', 'Component');
 
 function TargetArea() {
-    this.super('半径', Type.TARGET, true);
+    this.super('Area', Type.TARGET, true);
 
-    this.description = '将目标指向指定半径内的所有实体';
+    this.description = 'Targets all units in a radius from the current target (the casting player is the default target).';
 
-    this.data.push(new AttributeValue("半径", "radius", 3, 0)
-        .setTooltip('范围的半径,单位为方块')
+    this.data.push(new AttributeValue("Radius", "radius", 3, 0)
+        .setTooltip('The radius of the area to target in blocks')
     );
 	addTargetOptions(this);
-    this.data.push(new ListValue("随机", "random", [ 'True', 'False' ], 'False')
-        .setTooltip('是否随机选取目标 False为不随机')
+    this.data.push(new ListValue("Random", "random", ['True', 'False'], 'False')
+        .setTooltip('Whether to randomize the targets selected')
     );
 }
 
 extend('TargetCone', 'Component');
 
 function TargetCone() {
-    this.super('圆锥', Type.TARGET, true);
+    this.super('Cone', Type.TARGET, true);
 
-    this.description = '将目标指向施法者前面的一行中的所有实体(圆锥形).';
+    this.description = 'Targets all units in a line in front of the current target (the casting player is the default target). If you include the caster, that counts towards the max amount.';
 
-    this.data.push(new AttributeValue("距离", "range", 5, 0)
-        .setTooltip('最大距离,单位为方块')
+    this.data.push(new AttributeValue("Range", "range", 5, 0)
+        .setTooltip('The max distance away any target can be in blocks')
     );
-    this.data.push(new AttributeValue("角度", "angle", 90, 0)
-        .setTooltip('圆锥弧线角度')
+    this.data.push(new AttributeValue("Angle", "angle", 90, 0)
+        .setTooltip('The angle of the cone arc in degrees')
     );
 	addTargetOptions(this);
 }
@@ -895,15 +932,15 @@ function TargetCone() {
 extend('TargetLinear', 'Component');
 
 function TargetLinear() {
-    this.super('直线', Type.TARGET, true);
+    this.super('Linear', Type.TARGET, true);
 
-    this.description = '将目标指向施法者前面的一行中的所有实体(直线)';
+    this.description = 'Targets all units in a line in front of the current target (the casting player is the default target).';
 
-    this.data.push(new AttributeValue("距离", "range", 5, 0)
-        .setTooltip('最大距离,单位为方块')
+    this.data.push(new AttributeValue("Range", "range", 5, 0)
+        .setTooltip('The max distance away any target can be in blocks')
     );
-    this.data.push(new AttributeValue("宽度", "tolerance", 4, 0)
-        .setTooltip('直线的宽度,单位为方块,越宽越容易被指向')
+    this.data.push(new AttributeValue("Tolerance", "tolerance", 0, 0)
+        .setTooltip('How much to expand the potential entity\'s hitbox in all directions, in blocks. This makes it easier to aim')
     );
 	addTargetOptions(this);
 }
@@ -911,36 +948,36 @@ function TargetLinear() {
 extend('TargetLocation', 'Component');
 
 function TargetLocation() {
-    this.super('位置', Type.TARGET, true);
+    this.super('Location', Type.TARGET, true);
 
-    this.description = '目标指向玩家十字准星所在位置. 将另一种目标选取与此结合以实现远程区域效果(与"范围"结合类似火男的W)';
+    this.description = 'Targets the location the target or caster is looking at. Combine this with another targeting type for ranged area effects.';
 
-    this.data.push(new AttributeValue('距离', 'range', 5, 0)
-        .setTooltip('最大距离,单位为方块')
+    this.data.push(new AttributeValue('Range', 'range', 5, 0)
+        .setTooltip('The max distance the location can be from the target\'s eyes')
     );
-    this.data.push(new ListValue('敌人', 'entities', ['True', 'False'], 'True')
-        .setTooltip('如果为true则取敌人，反之则不取')
+    this.data.push(new ListValue('Entities', 'entities', ['True', 'False'], 'True')
+        .setTooltip('True to account for entities, or false to pass through them')
     );
-    this.data.push(new ListValue('流体', 'fluids', ['True', 'False'], 'False')
-        .setTooltip('如果为true则计算液体（水和岩浆），false则绕过')
+    this.data.push(new ListValue('Fluids', 'fluids', ['True', 'False'], 'False')
+        .setTooltip('True to account for fluids (water and lava), or false to pass through them')
     );
-    this.data.push(new ListValue('不完整方块', 'passable', ['True', 'False'], 'True')
-        .setTooltip('如果为true计算不完整方块（草，树苗等）是否可以穿过，false则绕过')
+    this.data.push(new ListValue('Passable blocks', 'passable', ['True', 'False'], 'True')
+        .setTooltip('True to account for passable or non-collidable blocks (grass, saplings, etc), or false to pass through them')
     );
-    this.data.push(new ListValue('中心', 'center', ['True', 'False'], 'False')
-        .setTooltip('是否将命中位置移动到方块的中心')
+    this.data.push(new ListValue('Center', 'center', ['True', 'False'], 'False')
+        .setTooltip('Whether to move the hit location to the center of the block')
     );
 }
 
 extend('TargetNearest', 'Component');
 
 function TargetNearest() {
-    this.super('最近', Type.TARGET, true);
+    this.super('Nearest', Type.TARGET, true);
 
-    this.description = '以施法者为中心，指向最近的实体';
+    this.description = 'Targets the closest unit(s) in a radius from the current target (the casting player is the default target). If you include the caster, that counts towards the max number.';
 
-    this.data.push(new AttributeValue("半径", "radius", 3, 0)
-        .setTooltip('范围的半径,单位为方块')
+    this.data.push(new AttributeValue("Radius", "radius", 3, 0)
+        .setTooltip('The radius of the area to target in blocks')
     );
 	addTargetOptions(this);
 }
@@ -948,30 +985,31 @@ function TargetNearest() {
 extend('TargetOffset', 'Component');
 
 function TargetOffset() {
-    this.super('偏移', Type.TARGET, true);
+    this.super('Offset', Type.TARGET, true);
 
-    this.description = '对目标选取的范围进行指定的偏移(需要之前就有一个"目标选取")并重新指向偏移后的范围';
+    this.description = 'Targets a location that is the given offset away from each target.';
 
-    this.data.push(new AttributeValue('向前', 'forward', 0, 0)
-        .setTooltip('目标前方(面向)的偏移量,负数为向后偏移')
+    this.data.push(new SectionMarker('Offset'));
+    this.data.push(new AttributeValue('Forward', 'forward', 0, 0)
+        .setTooltip('The offset from the target in the direction they are facing. Negative numbers go backwards.')
     );
-    this.data.push(new AttributeValue('向上', 'upward', 2, 0.5)
-        .setTooltip('目标上方的偏移量,负数为向下偏移')
+    this.data.push(new AttributeValue('Upward', 'upward', 2, 0.5)
+        .setTooltip('The offset from the target upwards. Negative numbers go below them.')
     );
-    this.data.push(new AttributeValue('向右', 'right', 0, 0)
-        .setTooltip('目标右方的偏移量,负数为向右偏移')
+    this.data.push(new AttributeValue('Right', 'right', 0, 0)
+        .setTooltip('The offset from the target to their right. Negative numbers go to the left.')
     );
 }
 
 extend('TargetRemember', 'Component');
 
 function TargetRemember() {
-    this.super('记忆', Type.TARGET, true);
+    this.super('Remember', Type.TARGET, true);
 
-    this.description = '指向被记忆目标,使用"Remember Targets"(标记目标)效果来记忆目标,没有记忆目标则释放失败';
+    this.description = 'Targets entities stored using the "Remember Targets" mechanic for the matching key. If it was never set, this will fail.';
 
-    this.data.push(new StringValue('记忆名称', 'key', 'target')
-        .setTooltip('记忆的名称,不可重复')
+    this.data.push(new StringValue('Key', 'key', 'target')
+        .setTooltip('The unique key for the target group that should match that used by the "Remember Targets" skill')
     );
 }
 
@@ -980,7 +1018,7 @@ extend('TargetSelf', 'Component');
 function TargetSelf() {
     this.super('Self', Type.TARGET, true);
 
-    this.description = '指向自己';
+    this.description = 'Returns the current target back to the caster.';
 }
 
 extend('TargetSingle', 'Component');
@@ -988,19 +1026,19 @@ extend('TargetSingle', 'Component');
 function TargetSingle() {
     this.super('Single', Type.TARGET, true);
 
-    this.description = '指向在施法者前面的一个单位';
+    this.description = 'Targets a single unit in front of the current target (the casting player is the default target).';
 
-    this.data.push(new AttributeValue("距离", "range", 5, 0)
-        .setTooltip('最大距离,单位为方块')
+    this.data.push(new AttributeValue("Range", "range", 5, 0)
+        .setTooltip('The max distance away any target can be in blocks')
     );
-    this.data.push(new AttributeValue("宽度", "tolerance", 4, 0)
-        .setTooltip('宽度,单位为方块,越宽越容易被指向')
+    this.data.push(new AttributeValue("Tolerance", "tolerance", 0, 0)
+        .setTooltip('How much to expand the potential entity\'s hitbox in all directions, in blocks. This makes it easier to aim')
     );
-    this.data.push(new ListValue("群组", "group", ["Ally", "Enemy", "Both"], "Enemy")
-        .setTooltip('攻击范围内的实体群组 分别为：盟友 敌人 两者')
+    this.data.push(new ListValue("Group", "group", ["Ally", "Enemy", "Both"], "Enemy")
+        .setTooltip('The alignment of targets to get')
     );
-    this.data.push(new ListValue("穿墙", "wall", ['True', 'False'], 'False')
-        .setTooltip('是否允许技能穿过墙壁寻找目标 False为不允许')
+    this.data.push(new ListValue("Through Wall", "wall", ['True', 'False'], 'False')
+        .setTooltip('Whether to allow targets to be on the other side of a wall')
     );
 }
 
@@ -1010,16 +1048,16 @@ extend('ConditionAltitude', 'Component');
 
 function ConditionAltitude()
 {
-    this.super('高度', Type.CONDITION, true);
+    this.super('Altitude', Type.CONDITION, true);
 
     this.description = "Applies child components whenever the player is on a certain height-level";
 
-    this.data.push(new AttributeValue('最小', 'min', 0, 0)
-        .setTooltip('玩家必须达到的最小高度')
+    this.data.push(new AttributeValue('Min', 'min', 0, 0)
+        .setTooltip('The minimum height a player has to be on')
     );
 
-    this.data.push(new AttributeValue('最大', 'max', 0, 0)
-        .setTooltip('玩家可以达到的最大高度')
+    this.data.push(new AttributeValue('Max', 'max', 0, 0)
+        .setTooltip('The maximum height a player can be on')
     );
 
 }
@@ -1027,11 +1065,11 @@ function ConditionAltitude()
 extend('ConditionArmor', 'Component');
 
 function ConditionArmor() {
-    this.super('盔甲', Type.CONDITION, true);
-    this.description = "当目标穿着与给定细节匹配的护甲物品时，应用子组件。";
+    this.super('Armor', Type.CONDITION, true);
+    this.description = "Applies child components when the target is wearing an armor item matching the given details.";
 
-    this.data.push(new ListValue('护甲槽', 'armor', [ 'Helmet', 'Chestplate', 'Leggings', 'Boots', 'Any' ], 'Any')
-        .setTooltip('指定的槽位,分别为头盔 胸甲 护腿 靴子 任意')
+    this.data.push(new ListValue('Armor', 'armor', ['Helmet', 'Chestplate', 'Leggings', 'Boots', 'Any'], 'Any')
+        .setTooltip('The type of armor to check')
     );
 
     addItemConditionOptions(this);
@@ -1039,53 +1077,52 @@ function ConditionArmor() {
 
 extend('ConditionAttribute', 'Component');
 
-function ConditionAttribute()
-{
-    this.super('属性', Type.CONDITION, true);
+function ConditionAttribute() {
+    this.super('Attribute', Type.CONDITION, true);
 
-    this.description = '目标需要拥有指定属性的指定值';
+    this.description = 'Requires the target to have a given number of attributes';
 
-    this.data.push(new StringValue('属性', 'attribute', 'Vitality')
-        .setTooltip('指定的属性名称')
+    this.data.push(new StringValue('Attribute', 'attribute', 'Vitality')
+        .setTooltip('The name of the attribute you are checking the value of')
     );
-    this.data.push(new AttributeValue('最小值', 'min', 0, 0)
-        .setTooltip('属性不能低于最小值')
+    this.data.push(new AttributeValue('Min', 'min', 0)
+        .setTooltip('The minimum amount of the attribute the target requires')
     );
-    this.data.push(new AttributeValue('最大值', 'max', 999, 0)
-        .setTooltip('属性不能高于最大值')
+    this.data.push(new AttributeValue('Max', 'max', 999, 0)
+        .setTooltip('The maximum amount of the attribute the target requires')
     );
 }
 
-
 extend('ConditionBiome', 'Component');
 
-function ConditionBiome()
-{
-    this.super('生物群系', Type.CONDITION, true);
+function ConditionBiome() {
+    this.super('Biome', Type.CONDITION, true);
 
-    this.description = '目标需要在(或不在)指定的生物群系';
+    this.description = 'Applies child components when in a specified biome.';
 
-    this.data.push(new ListValue('类型', 'type', [ 'In Biome', 'Not In Biome' ], 'In Biome')
-        .setTooltip('分别为:在指定生物群系中 不在指定生物群系中')
+    this.data.push(new ListValue('Type', 'type', ['In Biome', 'Not In Biome'], 'In Biome')
+        .setTooltip('Whether the target should be in the biome. If checking for in the biome, they must be in any one of the checked biomes. If checking for the opposite, they must not be in any of the checked biomes.')
     );
-    this.data.push(new MultiListValue('生物群系', 'biome', getBiomes, [ 'Forest' ])
-            .setTooltip('指定的生物群系')
+    this.data.push(new MultiListValue('Biome', 'biome', getBiomes, ['Forest'])
+        .setTooltip('The biomes to check for. The expectation would be any of the selected biomes need to match')
     );
 }
 
 extend('ConditionBlock', 'Component');
 
-function ConditionBlock()
-{
-    this.super('方块', Type.CONDITION, true);
+function ConditionBlock() {
+    this.super('Block', Type.CONDITION, true);
 
-    this.description = '目标需要以指定方式接触指定方块';
+    this.description = 'Applies child components if the target is currently standing on a block of the given type.';
 
-    this.data.push(new ListValue('方式', 'standing', [ 'On Block', 'Not On Block', 'In Block', 'Not In Block' ], 'On Block')
-        .setTooltip('分别为 在方块上 不在方块上 在方块里 不在方块里 在/不在方块上检测的是脚下的方块 在/不在方块里检测的是脚所在位置的方块')
+    this.data.push(new ListValue('Type', 'standing', ['On Block',
+                                                      'Not On Block',
+                                                      'In Block',
+                                                      'Not In Block'], 'On Block')
+        .setTooltip('Specifies which block to check and whether it should match the selected mateiral. "On Block" is directly below the player while "In Block" is the block a player\'s feet are in.')
     );
-    this.data.push(new ListValue('类型', 'material', getMaterials, 'Dirt')
-        .setTooltip('方块的类型')
+    this.data.push(new ListValue('Material', 'material', getMaterials, 'Dirt')
+        .setTooltip('The type of the block to require the targets to stand on')
     );
 }
 
@@ -1093,9 +1130,9 @@ extend('ConditionBurning', 'Component');
 
 function ConditionBurning() 
 {
-    this.super('燃烧', Type.CONDITION, true);
+    this.super('Burning', Type.CONDITION, true);
 
-    this.description = '如果脚轮烧毁或未燃烧，则应用子组件';
+    this.description = 'Applies child components if the caster burns or not';
 
     this.data.push(new ListValue('Type', 'burn', ['Burn', 'Dont burn'], 'Burn')
         .setTooltip('Specifies whether the player has to be burning for this skill to be performed')
@@ -1104,46 +1141,43 @@ function ConditionBurning()
 
 extend('ConditionCeiling', 'Component');
 
-function ConditionCeiling()
-{
-    this.super('头上空间', Type.CONDITION, true);
+function ConditionCeiling() {
+    this.super('Ceiling', Type.CONDITION, true);
 
-    this.description = '目标需要与头上空间保持指定距离';
+    this.description = 'Checks the height of the ceiling above each target';
 
-    this.data.push(new AttributeValue('距离', 'distance', 5, 0)
-        .setTooltip('保持的距离,单位为方块')
+    this.data.push(new AttributeValue('Distance', 'distance', 5, 0)
+        .setTooltip('How high to check for the ceiling')
     );
-    this.data.push(new ListValue('高于或低于', 'at-least', [ 'True', 'False' ], 'True')
-        .setTooltip('True表示必须高于指定距离 False表示必须低于指定距离')
+    this.data.push(new ListValue('At least', 'at-least', ['True', 'False'], 'True')
+        .setTooltip('When true, the ceiling must be at least the give number of blocks high. If false, the ceiling must be lower than the given number of blocks')
     );
 }
 
-
 extend('ConditionChance', 'Component');
-function ConditionChance()
-{
+
+function ConditionChance() {
     this.super('Chance', Type.CONDITION, true);
 
-    this.description = '有几率释放技能';
+    this.description = 'Rolls a chance to apply child components.';
 
-    this.data.push(new AttributeValue('几率', 'chance', 25, 0)
-        .setTooltip('技能释放的几率 "25" 表示几率为25%')
+    this.data.push(new AttributeValue('Chance', 'chance', 25, 0)
+        .setTooltip('The chance to execute children as a percentage. "25" would be 25%.')
     );
 }
 
 extend('ConditionClass', 'Component');
 
-function ConditionClass()
-{
+function ConditionClass() {
     this.super('Class', Type.CONDITION, true);
 
-    this.description = '目标需要为指定职业';
+    this.description = 'Applies child components when the target is the given class or optionally a profession of that class. For example, if you check for "Fighter" which professes into "Warrior", a "Warrior" will pass the check if you do not enable "exact".';
 
-    this.data.push(new StringValue('职业', 'class', 'Fighter')
-        .setTooltip('所需要的职业')
+    this.data.push(new StringValue('Class', 'class', 'Fighter')
+        .setTooltip('The class the player should be')
     );
-    this.data.push(new ListValue('精确', 'exact', [ 'True', 'False' ], 'False')
-        .setTooltip('是否需要精确的职业,False为不需要,代表曾经为该职业也算,True代表当前必须是该职业')
+    this.data.push(new ListValue('Exact', 'exact', ['True', 'False'], 'False')
+        .setTooltip('Whether the player must be exactly the given class. If false, they can be a later profession of the class.')
     );
 }
 
@@ -3196,7 +3230,6 @@ function MechanicValueLoreSlot() {
         .setTooltip('The multiplier for the acquired value. If you want the value to remain unchanged, leave this value at 1.')
     );
 }
-
 
 extend('MechanicValueMana', 'Component');
 
