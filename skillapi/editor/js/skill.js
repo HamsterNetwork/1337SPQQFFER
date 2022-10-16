@@ -227,9 +227,9 @@ Skill.prototype.loadBase = loadSection;
 function newSkill()
 {
 	var id = 1;
-	while (isSkillNameTaken('Skill ' + id)) id++;
+	while (isSkillNameTaken('技能 ' + id)) id++;
 
-	activeSkill = addSkill('Skill ' + id);
+	activeSkill = addSkill('技能 ' + id);
 
 	var list = document.getElementById('skillList');
 	list.selectedIndex = list.length - 2;
@@ -291,7 +291,7 @@ function getSkill(name)
 }
 
 
-var activeSkill = new Skill('Skill 1');
+var activeSkill = new Skill('技能 1');
 var activeComponent = undefined;
 var skills = [activeSkill];
 activeSkill.createFormHTML();
