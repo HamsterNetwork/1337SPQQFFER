@@ -444,7 +444,6 @@ function loadSkillText(text) {
             if (isSkillNameTaken(key)) {
                 getSkill(key).load(data[key]);
                 if (getSkill(key) == activeSkill) {
-                    
                     activeSkill.apply();
                     showSkillPage('builder');
                 }
@@ -513,36 +512,34 @@ function loadSection(data) {
         else if (x == this.componentKey) {
             const components = data[x];
             for (var y in components) {
-                var type = components[y].type;
+                const type =  components[y].type != undefined ? components[y].type.toUpperCase() : components[y].type;
                 let list;
-                let key = y;
-                if(type != undefined)
-                {
-                    type = type.toUpperCase()
-                    if (Type[type] == Type.TRIGGER) {
-                        list = Trigger;
-                    }
-                    else if (Type[type] == Type.TARGET) {
-                        list = Target;
-                    }
-                    else if (Type[type] == Type.CONDITION) {
-                        list = Condition;
-                    }
-                    else if (Type[type] == Type.MECHANIC) {
-                        list = Mechanic;
-                    }
-                    if (key.indexOf('-') > 0) key = key.substring(0, key.indexOf('-'));
-                
-                    key = language[type][key]
+                if (Type[type] == Type.TRIGGER) {
+                    list = Trigger;
                 }
+                else if (Type[type] == Type.TARGET) {
+                    list = Target;
+                }
+                else if (Type[type] == Type.CONDITION) {
+                    list = Condition;
+                }
+                else if (Type[type] == Type.MECHANIC) {
+                    list = Mechanic;
+                }
+
+                let key = y;
+                if (key.indexOf('-') > 0) key = key.substring(0, key.indexOf('-'));
                 
                 if (list !== undefined) {
+                    
                     for (let z in list) {
-                        if (list[z].name.toLowerCase() == key.toLowerCase()) {
+                        if (list[z].name.toLowerCase() == language[type][key]) {
                             const component = list[z].construct
                                 ? new list[z].construct()
                                 : list[z].supplier();
+                                
                             component.parent = this;
+                            
                             this.components.push(component);
                             component.load(components[y]);
                         }
