@@ -13,23 +13,23 @@ h3:hover {
 	cursor: pointer;
 }
 
-.triggerLabel:before {
-	content: "Trigger: ";
+.触发器Label:before {
+	content: "触发器: ";
 	color: red;
 }
 
-.conditionLabel:before {
-	content: "Condition: ";
+.条件Label:before {
+	content: "条件: ";
 	color: blue;
 }
 
-.targetLabel:before {	
-	content: "Target: ";
+.目标Label:before {	
+	content: "目标: ";
 	color: #080;
 }
 
-.mechanicLabel:before {
-	content: "Mechanic: ";
+.效果Label:before {
+	content: "效果: ";
 	color: #f0f;
 }
 

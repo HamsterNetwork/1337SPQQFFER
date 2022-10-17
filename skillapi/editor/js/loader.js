@@ -49,6 +49,7 @@ function updateLoader() {
  * @param key class name
  */
 function applyExtensions(key) {
+    
     var sub = window[key];
     var list = EXTENSIONS[key];
     for (var i = 0; i < list.length; i++) {
@@ -101,6 +102,7 @@ function depend(script, callback) {
     // If already loaded, run the callback
     if (SCRIPT_TAGS[script]) {
         var data = SCRIPT_TAGS[script];
+        console.log(data)
         if (data.loaded) {
             if (callback) callback();
         }

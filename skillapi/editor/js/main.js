@@ -43,6 +43,7 @@ depend('data/data', function () {
     depend('skill', function () {
         document.getElementById('skillList').addEventListener('change', function (e) {
             activeSkill.update();
+            
             if (activeComponent) {
                 activeComponent.update();
             }
@@ -228,11 +229,13 @@ window.onload = function () {
         ATTRIBS = attribs.split(",");
     }
     if (skillData) {
+        
         skills = [];
         document.getElementById('skillList').remove(0);
         loadSkillText(skillData);
         if (skillIndex) {
             document.getElementById('skillList').selectedIndex = parseInt(skillIndex);
+            
             activeSkill = skills[Math.max(0, Math.min(skills.length - 1, parseInt(skillIndex)))];
             activeSkill.apply();
             showSkillPage('builder');
@@ -399,6 +402,7 @@ function loadIndividual(e) {
         loadAttributes(e);
     }
     else if (text.indexOf('components:') >= 0 || (text.indexOf('group:') == -1 && text.indexOf('combo:') == -1 && text.indexOf('skills:') == -1)) {
+        
         loadSkills(e);
     }
     else {
@@ -433,11 +437,14 @@ function loadSkillText(text) {
 
     // Load new skills
     const data = parseYAML(text);
+    
     for (let key in data) {
         if (data[key] instanceof YAMLObject && key != 'loaded') {
+            
             if (isSkillNameTaken(key)) {
                 getSkill(key).load(data[key]);
                 if (getSkill(key) == activeSkill) {
+                    
                     activeSkill.apply();
                     showSkillPage('builder');
                 }
@@ -487,6 +494,7 @@ function loadSection(data) {
             const attribs = data[x];
             for (var y in attribs) {
                 for (var i = 0; i < this.data.length; i++) {
+                    
                     if (this.data[i].key == y && this.data[i].load) {
                         this.data[i].load(attribs[y]);
                         break;
@@ -505,23 +513,29 @@ function loadSection(data) {
         else if (x == this.componentKey) {
             const components = data[x];
             for (var y in components) {
-                const type = components[y].type;
+                var type = components[y].type;
                 let list;
-                if (type == Type.TRIGGER) {
-                    list = Trigger;
-                }
-                else if (type == Type.TARGET) {
-                    list = Target;
-                }
-                else if (type == Type.CONDITION) {
-                    list = Condition;
-                }
-                else if (type == Type.MECHANIC) {
-                    list = Mechanic;
-                }
-
                 let key = y;
-                if (key.indexOf('-') > 0) key = key.substring(0, key.indexOf('-'));
+                if(type != undefined)
+                {
+                    type = type.toUpperCase()
+                    if (Type[type] == Type.TRIGGER) {
+                        list = Trigger;
+                    }
+                    else if (Type[type] == Type.TARGET) {
+                        list = Target;
+                    }
+                    else if (Type[type] == Type.CONDITION) {
+                        list = Condition;
+                    }
+                    else if (Type[type] == Type.MECHANIC) {
+                        list = Mechanic;
+                    }
+                    if (key.indexOf('-') > 0) key = key.substring(0, key.indexOf('-'));
+                
+                    key = language[type][key]
+                }
+                
                 if (list !== undefined) {
                     for (let z in list) {
                         if (list[z].name.toLowerCase() == key.toLowerCase()) {

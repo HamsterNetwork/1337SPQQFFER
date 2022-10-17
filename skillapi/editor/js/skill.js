@@ -59,7 +59,9 @@ Skill.prototype.apply = function()
 	// Set up the builder content
 	for (var i = 0; i < this.components.length; i++)
 	{
+		
 		this.components[i].createBuilderHTML(builder);
+		
 	}
 }
 
