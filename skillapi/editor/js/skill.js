@@ -136,7 +136,6 @@ Skill.prototype.update = function()
 		}
 	}
 	var prevName = this.data[0].value;
-	
 	for (var j = 0; j < this.data.length; j++)
 	{
 		this.data[j].update();
